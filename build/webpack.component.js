@@ -20,7 +20,7 @@ module.exports = merge(webpackBaseConfig, {
     publicPath: '/lib/',
     filename: '[name].js',
     chunkFilename: '[id].js',
-    // library: 'lime-ui',
+    // library: 'moli-ui',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

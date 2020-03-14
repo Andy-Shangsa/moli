@@ -11,7 +11,7 @@ MoliUI
 
 # Install
 
-Run the command below in your terminal to install limeUI first
+Run the command below in your terminal to install MoliUI first
 
 ```
 npm install moli-ui --save
@@ -25,7 +25,7 @@ Import in your entry script file and register it
 
 ```javascript
 import MoliUI from "moli-ui";
-import "lime-ui/lib/styles/lime-ui.css";
+import "moli-ui/lib/styles/moli-ui.css";
 
 Vue.use(MoliUI);
 ```

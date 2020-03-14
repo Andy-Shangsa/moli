@@ -2,7 +2,7 @@
   "name": "moli-ui",
   "version": "1.0.0",
   "description": "A Vue.js 2.0 UI Toolkit for Web",
-  "main": "lib/lime-ui.min.js",
+  "main": "lib/moli-ui.min.js",
   "dependencies": {
     "async-validator": "^3.0.4",
     "core-js": "2.6.9",
@@ -62,15 +62,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arronKler/lime-ui.git"
+    "url": "git+https://github.com/Andy-Shangsa/moli.git"
   },
   "keywords": [],
   "author": "ArronKler <arronkler@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/arronKler/lime-ui/issues"
+    "url": "https://github.com/Andy-Shangsa/moli/issues"
   },
-  "homepage": "https://github.com/arronKler/lime-ui#readme",
+  "homepage": "https://github.com/Andy-Shangsa/moli/blob/master/README.md",
   "peerDependencies": {
     "vue": "^2.5.2"
   },

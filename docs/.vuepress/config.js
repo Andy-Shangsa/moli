@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'LimeUI',
-  base: '/lime-ui/',
+  title: 'MoliUI',
+  base: '/moli-ui/',
   description: 'another lightweight ui toolkit for Vue.js 2.X',
   port: 8083, 
   themeConfig: {

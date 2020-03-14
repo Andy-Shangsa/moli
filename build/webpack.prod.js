@@ -14,8 +14,8 @@ module.exports = merge(webpackBaseConfig, {
   output: {
     path: path.resolve(__dirname, '../lib'),
     publicPath: '/lib/',
-    filename: 'lime-ui.min.js',
-    library: 'lime-ui',
+    filename: 'moli-ui.min.js',
+    library: 'moli-ui',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
