@@ -1,9 +1,3 @@
-<p align="center">
-    <a>
-        <img width="200" src="./assets/logo.png">
-    </a>
-</p>
-
 <h1>
 MoliUI
     <h3>A lightweight Vue.js UI toolkit</h3>
