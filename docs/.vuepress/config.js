@@ -1,6 +1,6 @@
 module.exports = {
   title: "Moli UI",
-  base: "/moli-ui/",
+  base: "/moli/",
   description: "一套基于 Vue 2.0 的桌面端组件库",
   port: 3000,
   themeConfig: {
