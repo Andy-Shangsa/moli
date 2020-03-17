@@ -51,6 +51,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "play": "npm run docs:dev",
     "clean": "rimraf lib",
     "build:style": "gulp --gulpfile build/gen-style.js",
     "build:components": "webpack --config build/webpack.component.js",
@@ -65,7 +66,7 @@
     "url": "git+https://github.com/Andy-Shangsa/moli.git"
   },
   "keywords": [],
-  "author": "ArronKler <arronkler@gmail.com>",
+  "author": "AndyShang <1073062599@qq.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Andy-Shangsa/moli/issues"

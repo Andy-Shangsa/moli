@@ -1,26 +1,22 @@
-import Button from './packages/button'
-import Form from './packages/form'
-import FormItem from './packages/form-item'
-import Input from './packages/input'
-import Notice from './packages/notice/notice.js'
+import Button from "./packages/button";
+import ButtonGroup from "./packages/button-group";
 
 const components = {
-  lButton: Button,
-  lForm: Form,
-  lFormItem: FormItem,
-  lInput: Input
-}
+  Button,
+  ButtonGroup
+};
 
-
-const install = function (Vue, options = {}) {
-
-  Object.keys(components).forEach(key => {
-    Vue.component(key, components[key]);
+const install = function(Vue, options = {}) {
+  Object.values(components).map(component => {
+    Vue.component(component.name, component);
   });
+};
 
-
-  // Vue.prototype.$message = Message;
-  Vue.prototype.$notice = Notice;
+if (typeof window !== "undefined" && window.Vue) {
+  install(window.Vue);
 }
 
-export default install
+export default {
+  install,
+  ...components
+};

@@ -1,7 +1,22 @@
-
 @import "button";
-@import "message";
-@import "form";
-@import "form-item";
-@import "input";
-@import "notice";
+@import "button-group";
+@import "./common/icon.scss";
+
+[class*="ml-icon-"] {
+  font-family: "moli-iconfont";
+  font-style: normal;
+}
+
+.ml-icon-loading {
+  display: inline-block;
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(300deg);
+  }
+}

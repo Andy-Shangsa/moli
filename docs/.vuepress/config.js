@@ -1,36 +1,27 @@
 module.exports = {
-  title: 'MoliUI',
-  base: '/moli-ui/',
-  description: 'another lightweight ui toolkit for Vue.js 2.X',
-  port: 8083, 
+  title: "Moli UI",
+  base: "/moli-ui/",
+  description: "一套基于 Vue 2.0 的桌面端组件库",
+  port: 3000,
   themeConfig: {
     nav: [
-      { text: '主页', link: '/' },
-      { text: '组件', link: '/component/guide/introduction' },
-      { text: '主题', link: '/theme/' },
-      // { text: 'External', link: 'https://google.com' },
+      { text: "主页", link: "/" },
+      { text: "组件", link: "/component/guide/introduction" },
+      { text: "主题", link: "/theme/" }
     ],
     sidebar: {
-      '/component/': [
+      "/component/": [
         {
-          title: '开发指南',
+          title: "开发指南",
           collapsable: false,
-          children: [
-            'guide/introduction',
-            'guide/guide'
-          ]
+          children: ["guide/introduction", "guide/guide"]
         },
         {
-          title: '基础组件',
+          title: "基础组件",
           collapsable: false,
-          children: [
-            'basic/button',
-            'basic/input',
-            'basic/form',
-            'basic/notice'
-          ]
-        },
+          children: ["basic/button"]
+        }
       ]
     }
   }
-}
+};

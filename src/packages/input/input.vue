@@ -1,7 +1,7 @@
 <template>
-  <div class="lime-input-container">
+  <div class="moli-input-container">
     <input
-      class="lime-input"
+      class="moli-input"
       type="text"
       :class="inputClass"
       @input="handleInput"
@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     inputClass() {
-      const prefix = 'lime-input'
+      const prefix = 'moli-input'
       return {
         [`${prefix}__size-${this.size}`]: true
       }
