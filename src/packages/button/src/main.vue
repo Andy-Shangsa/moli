@@ -4,10 +4,10 @@ import { oneOf } from "../../../utils/assist";
 export default {
   name: "MButton",
   inject: {
-    elForm: {
+    MForm: {
       default: ""
     },
-    elFormItem: {
+    MFormItem: {
       default: ""
     }
   },
@@ -53,13 +53,13 @@ export default {
   },
   computed: {
     _elFormItemSize() {
-      return (this.elFormItem || {}).elFormItemSize;
+      return (this.MFormItem || {}).elFormItemSize;
     },
     buttonSize() {
       return this.size || this._elFormItemSize || (this.$MOLI || {}).size;
     },
     buttonDisabled() {
-      return this.disabled || (this.elForm || {}).disabled;
+      return this.disabled || (this.MForm || {}).disabled;
     }
   },
   render: function(h) {

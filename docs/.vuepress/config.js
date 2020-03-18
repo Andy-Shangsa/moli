@@ -20,7 +20,8 @@ module.exports = {
           title: "基础组件",
           collapsable: false,
           children: [
-            "basic/button"
+            "basic/button",
+            "basic/radio"
           ]
         }
       ]

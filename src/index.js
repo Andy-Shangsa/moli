@@ -1,9 +1,13 @@
 import Button from "./packages/button";
 import ButtonGroup from "./packages/button-group";
+import Radio from "./packages/radio";
+import RadioGroup from "./packages/radio-group";
 
 const components = {
   Button,
-  ButtonGroup
+  ButtonGroup,
+  Radio,
+  RadioGroup
 };
 
 const install = function(Vue, options = {}) {

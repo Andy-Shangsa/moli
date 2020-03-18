@@ -1,8 +1,7 @@
 ---
 title: Button
 ---
-
-## 按钮
+### 按钮
 
 #### 基础用法 <Badge text="type" type="warning"/>
 
