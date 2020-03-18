@@ -7,7 +7,7 @@ $--color-warning: #e6a23c !default;
 $--color-danger: #f56c6c !default;
 
 /* color
- -------------------------- */
+  -------------------------- */
 $--color-white: #ffffff !default;
 $--color-black: #000000 !default;
 $--color-text-regular: #606266 !default;
@@ -60,23 +60,17 @@ $--color-primary-light-9: mix(
 ) !default; /* ecf5ff */
 
 /* Border
--------------------------- */
+ -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
-/// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
-/// borderRadius|1|Radius|0
 $--border-radius-small: 2px !default;
-/// borderRadius|1|Radius|0
-$--border-radius-circle: 100% !default;
-/// borderRadius|1|Radius|0
-$--border-radius-zero: 0 !default;
-$--border-color-lighter: #EBEEF5 !default;
+$--border-color-lighter: #ebeef5 !default;
 
 /* font
- -------------------------- */
+  -------------------------- */
 $--font-size-base: 14px !default;
 $--font-weight-primary: 500 !default;
 $--font-weight-secondary: 100 !default;

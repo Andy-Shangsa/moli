@@ -99,17 +99,17 @@ title: Button
 ---
 
 <template>
-<m-button icon="ml-icon-icon_work_fill">默认</m-button>
-<m-button type="warning" icon="ml-icon-icon_work_fill" round>圆角</m-button>
-<m-button type="primary" icon="ml-icon-31fenxiang"></m-button>
-<m-button type="success" icon="ml-icon-huidaodingbu" round></m-button>
+<m-button icon="ml-icon-share">默认</m-button>
+<m-button type="warning" icon="ml-icon-delete" round>圆角</m-button>
+<m-button type="primary" icon="ml-icon-favorite"></m-button>
+<m-button type="success" icon="ml-icon-module" round></m-button>
 </template>
 
 ```html
-<m-button icon="ml-icon-icon_work_fill">默认</m-button>
-<m-button type="warning" icon="ml-icon-icon_work_fill" round>圆角</m-button>
-<m-button type="primary" icon="ml-icon-31fenxiang"></m-button>
-<m-button type="success" icon="ml-icon-huidaodingbu" round></m-button>
+<m-button icon="ml-icon-share">默认</m-button>
+<m-button type="warning" icon="ml-icon-delete" round>圆角</m-button>
+<m-button type="primary" icon="ml-icon-favorite"></m-button>
+<m-button type="success" icon="ml-icon-module" round></m-button>
 ```
 
 #### 不同尺寸
@@ -188,31 +188,31 @@ export default {
 
 <template>
 <m-button-group>
-  <m-button type="primary" icon="ml-icon-fanhui1">上一页</m-button>
+  <m-button type="primary" icon="ml-icon-arrow-left">上一页</m-button>
   <m-button type="primary">
   <span>下一页</span>
-  <i class="ml-icon-fanhui2"></i>
+  <i class="ml-icon-arrow-right"></i>
   </m-button>
 </m-button-group>
 <m-button-group>
-<m-button type="primary" icon="ml-icon-31fenxiang"></m-button>
-<m-button type="primary" icon="ml-icon-ashbin"></m-button>
-<m-button type="primary" icon="ml-icon-shoucangxuanzhong"></m-button>
+<m-button type="primary" icon="ml-icon-share"></m-button>
+<m-button type="primary" icon="ml-icon-delete"></m-button>
+<m-button type="primary" icon="ml-icon-favorite"></m-button>
 </m-button-group>
 </template>
 
 ```html
 <m-button-group>
-  <m-button type="primary" icon="ml-icon-fanhui1">上一页</m-button>
+  <m-button type="primary" icon="ml-icon-arrow-left">上一页</m-button>
   <m-button type="primary">
     <span>下一页</span>
-    <i class="ml-icon-fanhui2"></i>
+    <i class="ml-icon-arrow-right"></i>
   </m-button>
 </m-button-group>
 <m-button-group>
-  <m-button type="primary" icon="ml-icon-31fenxiang"></m-button>
-  <m-button type="primary" icon="ml-icon-ashbin"></m-button>
-  <m-button type="primary" icon="ml-icon-shoucangxuanzhong"></m-button>
+  <m-button type="primary" icon="ml-icon-share"></m-button>
+  <m-button type="primary" icon="ml-icon-delete"></m-button>
+  <m-button type="primary" icon="ml-icon-favorite"></m-button>
 </m-button-group>
 ```
 

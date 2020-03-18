@@ -90,7 +90,7 @@ export default {
     }
     // 是否显示icon
     const isShowIcon = this.icon && !this.loading;
-    // 是否圆形按钮
+    // 是否圆形按钮(圆角按钮且只有图标显示)
     const isCircle = isShowIcon && !this.$slots.default && this.round;
     if (isCircle) {
       cls += " is-circle";

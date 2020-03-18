@@ -1,10 +1,6 @@
-import MoliUI from '../../src/index.js'
-import "../../src/styles/index.scss"
+import MoliUI from "../../src/index.js";
+import "../../src/styles/index.scss";
 
-export default ({
-  Vue,
-  options,
-  router
-}) => {
-  Vue.use(MoliUI)
-}
+export default ({ Vue }) => {
+  Vue.use(MoliUI);
+};

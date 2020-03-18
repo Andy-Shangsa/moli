@@ -1,7 +1,7 @@
 {
   "name": "moli-ui",
   "version": "1.0.0",
-  "description": "A Vue.js 2.0 UI Toolkit for Web",
+  "description": "another light weight vue.js component library",
   "main": "lib/moli-ui.min.js",
   "dependencies": {
     "async-validator": "^3.0.4",
@@ -49,9 +49,10 @@
     "vuepress": "^1.0.3"
   },
   "scripts": {
+    "play": "vuepress dev docs",
+    "lib": "yarn build:style && yarn build:prod && yarn build:components",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "play": "npm run docs:dev",
     "clean": "rimraf lib",
     "build:style": "gulp --gulpfile build/gen-style.js",
     "build:components": "webpack --config build/webpack.component.js",
@@ -66,12 +67,9 @@
     "url": "git+https://github.com/Andy-Shangsa/moli.git"
   },
   "keywords": [],
-  "author": "AndyShang <1073062599@qq.com>",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Andy-Shangsa/moli/issues"
-  },
-  "homepage": "https://github.com/Andy-Shangsa/moli/blob/master/README.md",
+  "homepage": "https://github.com/Andy-Shangsa/moli.git#readme",
   "peerDependencies": {
     "vue": "^2.5.2"
   },

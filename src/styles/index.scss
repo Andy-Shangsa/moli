@@ -1,6 +1,7 @@
+@charset "UTF-8";
 @import "button";
 @import "button-group";
-@import "./common/icon.scss";
+@import "common/icon.scss";
 
 [class*="ml-icon-"] {
   font-family: "moli-iconfont";

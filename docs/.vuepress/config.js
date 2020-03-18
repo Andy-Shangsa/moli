@@ -1,8 +1,8 @@
 module.exports = {
   title: "Moli UI",
   base: "/moli/",
-  description: "一套基于 Vue 2.0 的桌面端组件库",
-  port: 3000,
+  description: "another lightweight ui toolkit for Vue.js 2.X",
+  port: 8080,
   themeConfig: {
     nav: [
       { text: "主页", link: "/" },
@@ -19,7 +19,9 @@ module.exports = {
         {
           title: "基础组件",
           collapsable: false,
-          children: ["basic/button"]
+          children: [
+            "basic/button"
+          ]
         }
       ]
     }

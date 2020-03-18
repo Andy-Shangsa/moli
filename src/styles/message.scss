@@ -1,9 +1,0 @@
-@charset "UTF-8";
-@import "common/var";
-@import "mixins/mixins";
-
-@include b(message) {
-  border: 1px solid gray;
-  background-color: #fff;
-  color: #333;
-}
