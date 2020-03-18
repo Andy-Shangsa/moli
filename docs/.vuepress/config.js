@@ -1,7 +1,7 @@
 module.exports = {
   title: "Moli UI",
   base: "/moli/",
-  description: "another lightweight ui toolkit for Vue.js 2.X",
+  description: "一套基于 Vue 2.0 的桌面端组件库",
   port: 8080,
   themeConfig: {
     nav: [
