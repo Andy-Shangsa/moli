@@ -36,7 +36,7 @@ export default {
     return h(
       "div",
       {
-        class: "ml--checkbox-group",
+        class: "ml-checkbox-group",
         attrs: {
           role: "group",
           "aria-label": "checkbox-group"

@@ -1,0 +1,112 @@
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/_button";
+
+@include b(checkbox-button) {
+  position: relative;
+  display: inline-block;
+
+  @include e(inner) {
+    display: inline-block;
+    line-height: 1;
+    font-weight: $--font-weight-primary;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background: $--color-white;
+    border: $--border-base;
+    border-left: 0;
+    color: $--color-text-regular;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    position: relative;
+    transition: $--all-transition;
+    @include utils-user-select(none);
+
+    @include button-size(12px, 20px, $--font-size-base, 0);
+
+    &:hover {
+      color: $--color-primary;
+    }
+
+    & [class*="ml-icon-"] {
+      line-height: 0.9;
+
+      & + span {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  @include e(original) {
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+  }
+
+  &.is-checked {
+    & .ml-checkbox-button__inner {
+      color: $--color-white;
+      background-color: $--color-primary;
+      border-color: $--color-primary;
+      box-shadow: -1px 0 0 0 $--color-primary-light-4;
+    }
+    &:first-child .ml-checkbox-button__inner {
+      border-left-color: $--color-primary;
+    }
+  }
+
+  &.is-disabled {
+    & .ml-checkbox-button__inner {
+      color: $--color-text-placeholder;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $--color-white;
+      border-color: $--border-color-lighter;
+      box-shadow: none;
+    }
+    &:first-child .ml-checkbox-button__inner {
+      border-left-color: $--border-color-lighter;
+    }
+  }
+
+  &:first-child {
+    .ml-checkbox-button__inner {
+      border-left: $--border-base;
+      border-radius: $--border-radius-base 0 0 $--border-radius-base;
+      box-shadow: none !important;
+    }
+  }
+
+  &.is-focus {
+    & .ml-checkbox-button__inner {
+      border-color: $--color-primary;
+    }
+  }
+
+  &:last-child {
+    .ml-checkbox-button__inner {
+      border-radius: 0 $--border-radius-base $--border-radius-base 0;
+    }
+  }
+  @include m(medium) {
+    .ml-checkbox-button__inner {
+      @include button-size(10px, 20px, $--font-size-base, 0);
+    }
+  }
+  @include m(small) {
+    .ml-checkbox-button__inner {
+      @include button-size(9px, 15px, 12px, 0);
+    }
+  }
+  @include m(mini) {
+    .ml-checkbox-button__inner {
+      @include button-size(7px, 15px, 12px, 0);
+    }
+  }
+}
