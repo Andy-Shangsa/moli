@@ -2,12 +2,12 @@
 <script>
 import { oneOf } from "../../../utils/assist";
 export default {
-  name: "MButton",
+  name: "MlButton",
   inject: {
-    MForm: {
+    mlForm: {
       default: ""
     },
-    MFormItem: {
+    mlFormItem: {
       default: ""
     }
   },
@@ -48,18 +48,15 @@ export default {
     round: Boolean,
     circle: Boolean
   },
-  data() {
-    return {};
-  },
   computed: {
-    _elFormItemSize() {
-      return (this.MFormItem || {}).elFormItemSize;
+    _formItemSize() {
+      return (this.mlFormItem || {}).formItemSize;
     },
     buttonSize() {
-      return this.size || this._elFormItemSize || (this.$MOLI || {}).size;
+      return this.size || this._formItemSize || (this.$MOLI || {}).size;
     },
     buttonDisabled() {
-      return this.disabled || (this.MForm || {}).disabled;
+      return this.disabled || (this.mlForm || {}).disabled;
     }
   },
   render: function(h) {

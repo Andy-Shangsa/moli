@@ -1,6 +1,6 @@
 <template>
   <component
-    :is="_Tag"
+    :is="_elTag"
     class="ml-radio-group"
     role="radiogroup"
     @keydown="handleKeydown"
@@ -17,10 +17,10 @@ const keyCode = Object.freeze({
   DOWN: 40
 });
 export default {
-  name: "MRadioGroup",
-  componentName: "MRadioGroup",
+  name: "MlRadioGroup",
+  componentName: "MlRadioGroup",
   inject: {
-    MFormItem: {
+    mlFormItem: {
       default: ""
     }
   },
@@ -33,14 +33,14 @@ export default {
     disabled: Boolean
   },
   computed: {
-    _elFormItemSize() {
-      return (this.MFormItem || {}).MFormItemSize;
+    _formItemSize() {
+      return (this.mlFormItem || {}).formItemSize;
     },
-    _Tag() {
+    _elTag() {
       return (this.$vnode.data || {}).tag || "div";
     },
     radioGroupSize() {
-      return this.size || this._elFormItemSize || (this.$MOLI || {}).size;
+      return this.size || this._formItemSize || (this.$MOLI || {}).size;
     }
   },
   created() {
@@ -98,7 +98,8 @@ export default {
   },
   watch: {
     value(value) {
-      this.dispatch("MFormItem", "el.form.change", [this.value]);
+      // 待处理
+      this.dispatch("MlFormItem", "el.form.change", [this.value]);
     }
   }
 };

@@ -17,11 +17,19 @@ module.exports = {
           children: ["guide/introduction", "guide/guide"]
         },
         {
-          title: "基础组件",
+          title: "组件",
           collapsable: false,
           children: [
-            "basic/button",
-            "basic/radio"
+            {
+              title: "基础组件",
+              collapsable: false,
+              children: ["basic/button"]
+            },
+            {
+              title: "表单组件",
+              collapsable: false,
+              children: ["basic/radio", "basic/checkbox"]
+            }
           ]
         }
       ]

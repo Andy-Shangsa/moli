@@ -49,17 +49,17 @@
 <script>
 import Emitter from "../../../mixins/emitter";
 export default {
-  name: "MRadio",
+  name: "MlRadio",
   mixins: [Emitter],
   inject: {
-    MForm: {
+    mlForm: {
       default: ""
     },
-    MFormItem: {
+    mlFormItem: {
       default: ""
     }
   },
-  componentName: "MRadio",
+  componentName: "MlRadio",
   props: {
     value: {},
     label: {},
@@ -77,7 +77,7 @@ export default {
     isGroup() {
       let parent = this.$parent;
       while (parent) {
-        if (parent.$options.componentName !== "MRadioGroup") {
+        if (parent.$options.componentName !== "MlRadioGroup") {
           parent = parent.$parent;
         } else {
           this._radioGroup = parent;
@@ -92,7 +92,7 @@ export default {
       },
       set(val) {
         if (this.isGroup) {
-          this.dispatch("MRadioGroup", "input", [val]);
+          this.dispatch("MlRadioGroup", "input", [val]);
         } else {
           this.$emit("input", val);
         }
@@ -101,7 +101,7 @@ export default {
       }
     },
     _elFormItemSize() {
-      return (this.MFormItem || {}).MFormItemSize;
+      return (this.mlFormItem || {}).formItemSize;
     },
     radioSize() {
       const temRadioSize =
@@ -114,8 +114,8 @@ export default {
       return this.isGroup
         ? this._radioGroup.disabled ||
             this.disabled ||
-            (this.MForm || {}).disabled
-        : this.disabled || (this.MForm || {}).disabled;
+            (this.mlForm || {}).disabled
+        : this.disabled || (this.mlForm || {}).disabled;
     },
     tabIndex() {
       return this.isDisabled || (this.isGroup && this.model !== this.label)
@@ -128,7 +128,7 @@ export default {
       this.$nextTick(() => {
         this.$emit("change", this.model);
         this.isGroup &&
-          this.dispatch("MRadioGroup", "handleChange", this.model);
+          this.dispatch("MlRadioGroup", "handleChange", this.model);
       });
     }
   }

@@ -4,7 +4,7 @@ title: Radio
 
 ### 单选按钮
 
-#### 基础用法 <Badge text="由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。" type="warning"/>
+#### 基础用法 <Badge text="若选项过多，建议使用 Select 选择器。" type="warning"/>
 
 ---
 
@@ -15,15 +15,16 @@ export default {
             model: "1",
             value: "1",
             group: "1",
-            border:"1"
+            border:"1",
+            button: "上海"
         }
     }
 }
 </script>
 
 <template>
-<m-radio v-model="model" label="1">选项一</m-radio>
-<m-radio v-model="model" label="2">选项二</m-radio>
+<ml-radio v-model="model" label="1">选项一</ml-radio>
+<ml-radio v-model="model" label="2">选项二</ml-radio>
 </template>
 
 ```vue
@@ -37,8 +38,8 @@ export default {
 };
 </script>
 <template>
-  <m-radio v-model="model" label="1">选项一</m-radio>
-  <m-radio v-model="model" label="2">选项二</m-radio>
+  <ml-radio v-model="model" label="1">选项一</ml-radio>
+  <ml-radio v-model="model" label="2">选项二</ml-radio>
 </template>
 ```
 
@@ -47,9 +48,9 @@ export default {
 ---
 
 <template>
-  <m-radio v-model="value" label="1" disabled>选项一</m-radio>
-  <m-radio v-model="value" label="2">选项二</m-radio>
-  <m-radio v-model="value" label="3" disabled>选项三</m-radio>
+  <ml-radio v-model="value" label="1" disabled>选项一</ml-radio>
+  <ml-radio v-model="value" label="2">选项二</ml-radio>
+  <ml-radio v-model="value" label="3" disabled>选项三</ml-radio>
 </template>
 
 ```vue
@@ -64,9 +65,9 @@ export default {
 </script>
 
 <template>
-  <m-radio v-model="model" label="1" disabled>选项一</m-radio>
-  <m-radio v-model="model" label="2">选项二</m-radio>
-  <m-radio v-model="model" label="3" disabled>选项三</m-radio>
+  <ml-radio v-model="model" label="1" disabled>选项一</ml-radio>
+  <ml-radio v-model="model" label="2">选项二</ml-radio>
+  <ml-radio v-model="model" label="3" disabled>选项三</ml-radio>
 </template>
 ```
 
@@ -75,11 +76,11 @@ export default {
 ---
 
 <template>
-<m-radio-group v-model="group">
-    <m-radio label="1">选项一</m-radio>
-    <m-radio label="2">选项二</m-radio>
-    <m-radio label="3">选项三</m-radio>
-</m-radio-group>
+<ml-radio-group v-model="group">
+    <ml-radio label="1">选项一</ml-radio>
+    <ml-radio label="2">选项二</ml-radio>
+    <ml-radio label="3">选项三</ml-radio>
+</ml-radio-group>
 </template>
 
 ```vue
@@ -93,11 +94,44 @@ export default {
 };
 </script>
 <template>
-  <m-radio-group v-model="model">
-    <m-radio label="1">选项一</m-radio>
-    <m-radio label="2">选项二</m-radio>
-    <m-radio label="3">选项三</m-radio>
-  </m-radio-group>
+  <ml-radio-group v-model="model">
+    <ml-radio label="1">选项一</ml-radio>
+    <ml-radio label="2">选项二</ml-radio>
+    <ml-radio label="3">选项三</ml-radio>
+  </ml-radio-group>
+</template>
+```
+
+#### 按钮类型
+
+---
+
+<template>
+  <ml-radio-group v-model="button">
+    <ml-radio-button label="上海"></ml-radio-button>
+    <ml-radio-button label="北京"></ml-radio-button>
+    <ml-radio-button label="广州"></ml-radio-button>
+    <ml-radio-button label="深圳"></ml-radio-button>
+  </ml-radio-group>
+</template>
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+      model: "上海"
+    };
+  }
+};
+</script>
+<template>
+  <ml-radio-group v-model="model">
+    <ml-radio-button label="上海"></ml-radio-button>
+    <ml-radio-button label="北京"></ml-radio-button>
+    <ml-radio-button label="广州"></ml-radio-button>
+    <ml-radio-button label="深圳"></ml-radio-button>
+  </ml-radio-group>
 </template>
 ```
 
@@ -106,9 +140,9 @@ export default {
 ---
 
 <template>
-<m-radio v-model="border" label="1" border>备选项1</m-radio>
-<m-radio v-model="border" label="2" border>备选项2</m-radio>
-<m-radio v-model="border" label="3" border>备选项3</m-radio>
+<ml-radio v-model="border" label="1" border>备选项1</ml-radio>
+<ml-radio v-model="border" label="2" border>备选项2</ml-radio>
+<ml-radio v-model="border" label="3" border>备选项3</ml-radio>
 </template>
 
 ```vue
@@ -122,8 +156,8 @@ export default {
 };
 </script>
 <template>
-  <m-radio v-model="model" label="1" border>备选项1</m-radio>
-  <m-radio v-model="border" label="2" border>备选项2</m-radio>
-  <m-radio v-model="border" label="3" border>备选项3</m-radio>
+  <ml-radio v-model="model" label="1" border>备选项1</ml-radio>
+  <ml-radio v-model="border" label="2" border>备选项2</ml-radio>
+  <ml-radio v-model="border" label="3" border>备选项3</ml-radio>
 </template>
 ```
