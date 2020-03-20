@@ -28,7 +28,7 @@ module.exports = {
             {
               title: "表单组件",
               collapsable: false,
-              children: ["basic/radio", "basic/checkbox"]
+              children: ["basic/radio", "basic/checkbox", "basic/switch"]
             }
           ]
         }

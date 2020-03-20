@@ -6,6 +6,7 @@ import RadioButton from "./packages/radio-button";
 import Checkbox from "./packages/checkbox";
 import CheckboxButton from "./packages/checkbox-button";
 import CheckboxGroup from "./packages/checkbox-group";
+import Switch from "./packages/switch";
 
 const components = {
   Button,
@@ -15,7 +16,8 @@ const components = {
   CheckboxGroup,
   Radio,
   RadioGroup,
-  RadioButton
+  RadioButton,
+  Switch
 };
 
 const install = function(Vue, options = {}) {
