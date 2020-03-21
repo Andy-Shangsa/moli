@@ -5,7 +5,7 @@ export default {
     updateAll: Boolean
   },
   inject: ["mlForm", "mlFormItem"],
-  render() {
+  render: function(h) {
     const slots = this.$slots.default;
     if (!slots) return null;
     if (this.isAutoWidth) {
@@ -17,10 +17,10 @@ export default {
           style.marginLeft = marginLeft + "px";
         }
       }
-      return (
-        <div class="ml-form-item__label-wrap" style={style}>
-          {slots}
-        </div>
+      return h(
+        "div",
+        { class: "ml-form-item__label-wrap", style: style },
+        slots
       );
     } else {
       return slots[0];
