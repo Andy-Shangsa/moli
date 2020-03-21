@@ -102,7 +102,7 @@ export default {
       return (
         this.disabled ||
         this._radioGroup.disabled ||
-        (this.elForm || {}).disabled
+        (this.mlForm || {}).disabled
       );
     },
     tabIndex() {

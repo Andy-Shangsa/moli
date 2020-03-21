@@ -7,6 +7,9 @@ import Checkbox from "./packages/checkbox";
 import CheckboxButton from "./packages/checkbox-button";
 import CheckboxGroup from "./packages/checkbox-group";
 import Switch from "./packages/switch";
+import Form from "./packages/form";
+import FormItem from "./packages/form-item";
+import Input from "./packages/input";
 
 const components = {
   Button,
@@ -17,7 +20,10 @@ const components = {
   Radio,
   RadioGroup,
   RadioButton,
-  Switch
+  Switch,
+  Form,
+  FormItem,
+  Input
 };
 
 const install = function(Vue, options = {}) {

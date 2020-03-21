@@ -98,8 +98,7 @@ export default {
   },
   watch: {
     value(value) {
-      // 待处理
-      this.dispatch("MlFormItem", "el.form.change", [this.value]);
+      this.dispatch("MlFormItem", "moli.form.change", [this.value]);
     }
   }
 };

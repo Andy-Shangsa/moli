@@ -156,9 +156,9 @@ export default {
       return this._checkboxGroup
         ? this._checkboxGroup.disabled ||
             this.disabled ||
-            (this.elForm || {}).disabled ||
+            (this.mlForm || {}).disabled ||
             this.isLimitDisabled
-        : this.disabled || (this.elForm || {}).disabled;
+        : this.disabled || (this.mlForm || {}).disabled;
     }
   },
   methods: {
