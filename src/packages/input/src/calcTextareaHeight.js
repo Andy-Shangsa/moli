@@ -94,6 +94,7 @@ export default function calcTextareaHeight(
       maxHeight = maxHeight + paddingSize + borderSize;
     }
     height = Math.min(maxHeight, height);
+    result.maxHeight = `${maxHeight}px`;
   }
   result.height = `${height}px`;
   hiddenTextarea.parentNode &&

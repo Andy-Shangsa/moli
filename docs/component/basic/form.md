@@ -125,10 +125,10 @@ title: Form
 
 <template>
 <ml-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-  <!-- <ml-form-item label="活动名称" prop="name">
-    <ml-input v-model="ruleForm.name"></ml-input>
+  <ml-form-item label="活动名称" prop="name">
+    <ml-input v-model="ruleForm.name" show-word-limit :maxlength="10"></ml-input>
   </ml-form-item>
-  <ml-form-item label="活动区域" prop="region">
+  <!-- <ml-form-item label="活动区域" prop="region">
     <ml-select v-model="ruleForm.region" placeholder="请选择活动区域">
       <ml-option label="区域一" value="shanghai"></ml-option>
       <ml-option label="区域二" value="beijing"></ml-option>
@@ -165,7 +165,7 @@ title: Form
     </ml-radio-group>
   </ml-form-item>
   <ml-form-item label="活动形式" prop="desc">
-    <ml-input type="textarea" v-model="ruleForm.desc"></ml-input>
+    <ml-input type="textarea" :autosize="{ minRows: 2, maxRows: 6 }" show-word-limit :maxlength="30" v-model="ruleForm.desc"></ml-input>
   </ml-form-item>
   <ml-form-item>
     <ml-button type="primary" @click="submitForm('ruleForm')">立即创建</ml-button>
