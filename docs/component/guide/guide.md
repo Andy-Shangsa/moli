@@ -1,9 +1,14 @@
 ---
 title: 安装
 ---
-# 开发指南
+## 安装
 
-输入下列命令可以安装moli-ui
+#### npm 安装
 ```
 npm install moli-ui  -S
+```
+
+#### yarn 安装
+```
+yarn add moli-ui
 ```

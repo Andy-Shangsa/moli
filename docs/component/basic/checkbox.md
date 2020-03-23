@@ -1,5 +1,5 @@
 ---
-title: Checkbox
+title: Checkbox 复选框
 ---
 
 ### 多选按钮

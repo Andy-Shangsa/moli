@@ -31,17 +31,30 @@ module.exports = {
               children: [
                 "basic/radio",
                 "basic/checkbox",
+                "basic/input",
+                "basic/select",
                 "basic/switch",
-                "basic/form",
-                "basic/input"
+                "basic/form"
               ]
+            },
+            {
+              title: "数据组件",
+              collapsable: false
+            },
+            {
+              title: "通知组件",
+              collapsable: false
+            },
+            {
+              title: "其他组件",
+              collapsable: false
             }
           ]
         }
       ]
     }
-  },
-  markdown: {
-    lineNumbers: true
   }
+  // markdown: {
+  //   lineNumbers: true
+  // }
 };
