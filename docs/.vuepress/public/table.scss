@@ -1,0 +1,42 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  margin-bottom: 45px;
+  line-height: 1.5em;
+  display: table !important;
+}
+
+table tr {
+  border: none;
+  background-color: #fff;
+}
+
+table th {
+  text-align: left;
+  white-space: nowrap;
+  color: #909399;
+  font-weight: 400;
+}
+
+table td {
+  color: #606266;
+}
+
+table td,
+table th {
+  border: none;
+  border-bottom: 1px solid #dcdfe6;
+  padding: 15px;
+  max-width: 250px;
+}
+
+// table td.des,
+// table td.type,
+// table th.des,
+// table th.type {
+//   text-align: start;
+//   min-width: 100px;
+//   max-width: 300px;
+// }

@@ -11,6 +11,8 @@ title: Input
                 model3: "",
                 pwd: "",
                 textarea: "",
+                textarea1: "",
+                textarea2: "",
                 modules: [
                 {
                     key: "basic",
@@ -28,7 +30,11 @@ title: Input
                     key: "clearable",
                     title: "可清空",
                     tips: "使用 <code>clearable</code> 属性即可得到一个可清空的输入框",
-                    source: `<ml-input v-model="model" placeholder="请输入内容" clearable></ml-input>`
+                    source: `<ml-input 
+                    v-model="model" 
+                    placeholder="请输入内容" 
+                    clearable>
+                    </ml-input>`
                 },
                 {
                     key: "password",
@@ -40,8 +46,23 @@ title: Input
                     key: "textarea",
                     title: "文本域",
                     desc: "用于输入多行文本信息，通过将 type 属性的值指定为 textarea。",
-                    tips: "文本域高度可通过 <code>rows<code> 属性控制",
-                    source: `<ml-input type="textarea" v-model="textarea" placeholder="请输入内容"  :rows="2"></ml-input>`
+                    tips: "文本域高度可通过 <code>rows</code> 属性控制",
+                    source: `<ml-input 
+                        type="textarea" 
+                        v-model="textarea" 
+                        placeholder="请输入内容"  
+                        :rows="2">
+                    </ml-input>`
+                }, {
+                    key: "autosize",
+                    title: "可自适应文本高度的文本域",
+                    desc: "通过设置 <code>autosize</code> 属性可以使得文本域的高度能够根据文本内容自动进行调整，并且 <code>autosize</code> 还可以设定为一个对象，指定最小行数和最大行数。",
+                    source: `<ml-input
+                    type="textarea"
+                    :autosize="{ minRows: 2, maxRows: 4}"
+                    placeholder="请输入内容"
+                    v-model="textarea2">
+                    </ml-input>`
                 }
             ]
            }
@@ -65,6 +86,14 @@ title: Input
     <template slot="textarea">
         <ml-input type="textarea" v-model="textarea" placeholder="请输入内容"  :rows="2"></ml-input>
     </template>
+    <template slot="autosize">
+    <ml-input
+        type="textarea"
+        :autosize="{ minRows: 2, maxRows: 4}"
+        placeholder="请输入内容"
+        v-model="textarea2">
+    </ml-input>
+    </template>
 </block>
 
 <style lang="scss">
@@ -75,3 +104,9 @@ title: Input
       width: 400px;
  }
 </style>
+
+### 属性
+
+| 参数 | 说明 | 类型   | 可选值                                      | 默认值 |
+| ---- | ---- | ------ | ------------------------------------------- | ------ |
+| type | 类型 | string | text，textarea 和其他 原生 input 的 type 值 | text   |

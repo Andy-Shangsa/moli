@@ -16,8 +16,22 @@ export default {
     const elArr = this.modules.map((module, index) => {
       const codeStr = module.source.replace(/^\s*/gm, "").trim();
       return h("div", { class: "module" }, [
-        module.title ? h("h3", { class: "title" }, module.title) : null,
-        module.desc ? h("p", { class: "desc" }, module.desc) : null,
+        module.title
+          ? h("h3", {
+              class: "title",
+              domProps: {
+                innerHTML: module.title
+              }
+            })
+          : null,
+        module.desc
+          ? h("p", {
+              class: "desc",
+              domProps: {
+                innerHTML: module.desc
+              }
+            })
+          : null,
         h("div", { class: "component-wrapper" }, [
           h(
             "div",
@@ -81,7 +95,14 @@ export default {
     });
     return h("div", { class: "code-block" }, [
       this.title ? h("h2", { class: "code-block__title" }, this.title) : null,
-      this.desc ? h("p", { class: "code-block__desc" }, this.desc) : null,
+      this.desc
+        ? h("p", {
+            class: "code-block__desc",
+            domProps: {
+              innerHTML: this.desc
+            }
+          })
+        : null,
       ...elArr
     ]);
   }
