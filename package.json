@@ -1,6 +1,6 @@
 {
-  "name": "moli-ui",
-  "version": "1.0.0",
+  "name": "moli-element",
+  "version": "1.0.5",
   "description": "another light weight vue.js component library",
   "main": "lib/moli-ui.min.js",
   "dependencies": {
@@ -67,8 +67,14 @@
     "type": "git",
     "url": "git+https://github.com/Andy-Shangsa/moli.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "vue",
+    "UI",
+    "moli",
+    "element",
+    "iview"
+  ],
+  "author": "andy-shang",
   "license": "ISC",
   "homepage": "https://github.com/Andy-Shangsa/moli.git#readme",
   "peerDependencies": {

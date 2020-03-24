@@ -10,6 +10,7 @@ import Switch from "./packages/switch";
 import Form from "./packages/form";
 import FormItem from "./packages/form-item";
 import Input from "./packages/input";
+import Select from "./packages/select";
 
 const components = {
   Button,
@@ -23,13 +24,18 @@ const components = {
   Switch,
   Form,
   FormItem,
-  Input
+  Input,
+  Select
 };
 
-const install = function(Vue, options = {}) {
+const install = function(Vue, opts = {}) {
   Object.values(components).map(component => {
     Vue.component(component.name, component);
   });
+  Vue.prototype.$MOLI = {
+    size: opts.size || "",
+    zIndex: opts.zIndex || 2000
+  };
 };
 
 if (typeof window !== "undefined" && window.Vue) {

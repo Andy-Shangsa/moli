@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: "MlLabelWrap",
   props: {
     isAutoWidth: Boolean,
     updateAll: Boolean
