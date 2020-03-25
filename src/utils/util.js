@@ -1,5 +1,6 @@
 export function noop() {}
 
+// 转短横线命名
 export const kebabCase = function(str) {
   const hyphenateRE = /([^-])([A-Z])/g;
   return str
@@ -33,3 +34,8 @@ export function getPropByPath(obj, path, strict) {
     v: tempObj ? tempObj[keyArr[i]] : null
   };
 }
+
+// 随机数
+export const generateId = function() {
+  return Math.floor(Math.random() * 10000);
+};

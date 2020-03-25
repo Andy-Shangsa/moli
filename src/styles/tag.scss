@@ -1,0 +1,203 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@mixin genTheme(
+  $backgroundColorWeight,
+  $borderColorWeight,
+  $fontColorWeight,
+  $hoverColorWeight
+) {
+  background-color: mix(
+    $--color-primary,
+    $--color-white,
+    $backgroundColorWeight
+  );
+  border-color: mix($--color-primary, $--color-white, $borderColorWeight);
+  color: mix($--color-primary, $--color-white, $fontColorWeight);
+
+  @include when(hit) {
+    border-color: $--color-primary;
+  }
+
+  .ml-tag__close {
+    color: mix($--color-primary, $--color-white, $fontColorWeight);
+    &:hover {
+      color: $--color-white;
+      background-color: mix(
+        $--color-primary,
+        $--color-white,
+        $hoverColorWeight
+      );
+    }
+  }
+
+  &.ml-tag--info {
+    background-color: mix(
+      $--color-info,
+      $--color-white,
+      $backgroundColorWeight
+    );
+    border-color: mix($--color-info, $--color-white, $borderColorWeight);
+    color: mix($--color-info, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--color-info;
+    }
+
+    .ml-tag__close {
+      color: mix($--color-info, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix($--color-info, $--color-white, $hoverColorWeight);
+      }
+    }
+  }
+
+  &.ml-tag--success {
+    background-color: mix(
+      $--color-success,
+      $--color-white,
+      $backgroundColorWeight
+    );
+    border-color: mix($--color-success, $--color-white, $borderColorWeight);
+    color: mix($--color-success, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--color-success;
+    }
+
+    .ml-tag__close {
+      color: mix($--color-success, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix(
+          $--color-success,
+          $--color-white,
+          $hoverColorWeight
+        );
+      }
+    }
+  }
+
+  &.ml-tag--warning {
+    background-color: mix(
+      $--color-warning,
+      $--color-white,
+      $backgroundColorWeight
+    );
+    border-color: mix($--color-warning, $--color-white, $borderColorWeight);
+    color: mix($--color-warning, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--color-warning;
+    }
+
+    .ml-tag__close {
+      color: mix($--color-warning, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix(
+          $--color-warning,
+          $--color-white,
+          $hoverColorWeight
+        );
+      }
+    }
+  }
+
+  &.ml-tag--danger {
+    background-color: mix(
+      $--color-danger,
+      $--color-white,
+      $backgroundColorWeight
+    );
+    border-color: mix($--color-danger, $--color-white, $borderColorWeight);
+    color: mix($--color-danger, $--color-white, $fontColorWeight);
+
+    @include when(hit) {
+      border-color: $--color-danger;
+    }
+
+    .ml-tag__close {
+      color: mix($--color-danger, $--color-white, $fontColorWeight);
+      &:hover {
+        color: $--color-white;
+        background-color: mix(
+          $--color-danger,
+          $--color-white,
+          $hoverColorWeight
+        );
+      }
+    }
+  }
+}
+
+@include b(tag) {
+  @include genTheme(10%, 20%, 100%, 100%);
+  display: inline-block;
+  height: 32px;
+  padding: 0 12px;
+  line-height: 30px;
+  font-size: 12px;
+  color: $--color-primary;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  .ml-icon-close {
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    right: -6px;
+
+    &::before {
+      display: block;
+    }
+  }
+
+  @include m(dark) {
+    @include genTheme(100%, 100%, 0, 80%);
+  }
+
+  @include m(plain) {
+    @include genTheme(0, 40%, 100%, 100%);
+  }
+
+  @include m(medium) {
+    height: 28px;
+    line-height: 26px;
+
+    .el-icon-close {
+      transform: scale(0.8);
+    }
+  }
+
+  @include m(small) {
+    height: 26px;
+    padding: 0 10px;
+    line-height: 24px;
+
+    .el-icon-close {
+      transform: scale(0.6);
+    }
+  }
+
+  @include m(mini) {
+    height: 22px;
+    padding: 0 10px;
+    line-height: 20px;
+
+    .el-icon-close {
+      margin-left: -4px;
+      transform: scale(0.4);
+    }
+  }
+}

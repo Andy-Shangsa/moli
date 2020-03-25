@@ -11,6 +11,8 @@ import Form from "./packages/form";
 import FormItem from "./packages/form-item";
 import Input from "./packages/input";
 import Select from "./packages/select";
+import Tag from "./packages/tag";
+import Tooltip from "./packages/tooltip";
 
 const components = {
   Button,
@@ -25,7 +27,9 @@ const components = {
   Form,
   FormItem,
   Input,
-  Select
+  Select,
+  Tag,
+  Tooltip
 };
 
 const install = function(Vue, opts = {}) {

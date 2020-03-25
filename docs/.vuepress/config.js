@@ -6,8 +6,8 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "主页", link: "/" },
-      { text: "组件", link: "/component/guide/introduction" }
-      // { text: "主题", link: "/theme/" }
+      { text: "组件", link: "/component/guide/introduction" },
+      { text: "github", link: "https://github.com/Andy-Shangsa/moli.git" }
     ],
     sidebar: {
       "/component/": [
@@ -29,17 +29,18 @@ module.exports = {
               title: "表单组件",
               collapsable: false,
               children: [
-                "basic/radio",
-                "basic/checkbox",
-                "basic/input",
-                "basic/select",
-                "basic/switch",
-                "basic/form"
+                "form/radio",
+                "form/checkbox",
+                "form/input",
+                "form/select",
+                "form/switch",
+                "form/form"
               ]
             },
             {
               title: "数据组件",
-              collapsable: false
+              collapsable: false,
+              children: ["data/tag"]
             },
             {
               title: "通知组件",
@@ -47,14 +48,12 @@ module.exports = {
             },
             {
               title: "其他组件",
-              collapsable: false
+              collapsable: false,
+              children: ["other/tooltip"]
             }
           ]
         }
       ]
     }
   }
-  // markdown: {
-  //   lineNumbers: true
-  // }
 };

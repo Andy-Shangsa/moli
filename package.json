@@ -6,6 +6,7 @@
   "dependencies": {
     "async-validator": "^3.0.4",
     "core-js": "2.6.9",
+    "throttle-debounce": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
   },

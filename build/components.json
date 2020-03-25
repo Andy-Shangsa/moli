@@ -10,5 +10,6 @@
   "input": "packages/input/index.js",
   "switch": "packages/switch/index.js",
   "form-item": "packages/form-item/index.js",
-  "form": "packages/form/index.js"
+  "form": "packages/form/index.js",
+  "tooltip": "packages/tooltip/index.js"
 }
