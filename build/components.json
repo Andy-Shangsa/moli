@@ -11,5 +11,6 @@
   "switch": "packages/switch/index.js",
   "form-item": "packages/form-item/index.js",
   "form": "packages/form/index.js",
-  "tooltip": "packages/tooltip/index.js"
+  "tooltip": "packages/tooltip/index.js",
+  "select": "packages/select/index.js"
 }

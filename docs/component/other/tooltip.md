@@ -97,8 +97,8 @@ title: Tooltip 提示
       margin: 4px;
     }
 
-    .left .el-tooltip__popper,
-    .right .el-tooltip__popper {
+    .left .ml-tooltip__popper,
+    .right .ml-tooltip__popper {
       padding: 8px 10px;
     }
 

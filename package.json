@@ -6,6 +6,8 @@
   "dependencies": {
     "async-validator": "^3.0.4",
     "core-js": "2.6.9",
+    "deepmerge": "^4.2.2",
+    "resize-observer-polyfill": "^1.5.1",
     "throttle-debounce": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
@@ -52,7 +54,7 @@
   },
   "scripts": {
     "play": "vuepress dev docs",
-    "lib": "yarn build:style && yarn build:prod && yarn build:components",
+    "lib": "yarn clean && yarn dist",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "clean": "rimraf lib",

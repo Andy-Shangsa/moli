@@ -140,7 +140,7 @@ export default {
         if (props.lockScroll) {
           this.withoutHiddenClass = !hasClass(
             document.body,
-            "el-popup-parent--hidden"
+            "ml-popup-parent--hidden"
           );
           if (this.withoutHiddenClass) {
             this.bodyPaddingRight = document.body.style.paddingRight;
@@ -161,7 +161,7 @@ export default {
             document.body.style.paddingRight =
               this.computedBodyPaddingRight + scrollBarWidth + "px";
           }
-          addClass(document.body, "el-popup-parent--hidden");
+          addClass(document.body, "ml-popup-parent--hidden");
         }
       }
 
@@ -224,7 +224,7 @@ export default {
     restoreBodyStyle() {
       if (this.modal && this.withoutHiddenClass) {
         document.body.style.paddingRight = this.bodyPaddingRight;
-        removeClass(document.body, "el-popup-parent--hidden");
+        removeClass(document.body, "ml-popup-parent--hidden");
       }
       this.withoutHiddenClass = true;
     }

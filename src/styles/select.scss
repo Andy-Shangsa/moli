@@ -1,0 +1,147 @@
+@import "mixins/mixins";
+@import "mixins/utils";
+@import "common/var";
+@import "select-dropdown";
+@import "input";
+@import "tag";
+@import "option";
+@import "option-group";
+@import "scrollbar";
+
+@include b(select) {
+  display: inline-block;
+  position: relative;
+
+  .ml-select__tags > span {
+    display: contents;
+  }
+
+  &:hover {
+    .ml-input__inner {
+      border-color: $--border-color-hover;
+    }
+  }
+
+  .ml-input__inner {
+    cursor: pointer;
+    padding-right: 35px;
+
+    &:focus {
+      border-color: $--color-primary;
+    }
+  }
+
+  .ml-input {
+    & .ml-select__caret {
+      color: $--color-text-placeholder;
+      font-size: 14px;
+      transition: transform 0.3s;
+      transform: rotateZ(180deg);
+      cursor: pointer;
+
+      @include when(reverse) {
+        transform: rotateZ(0deg);
+      }
+
+      @include when(show-close) {
+        font-size: $--font-size-base;
+        text-align: center;
+        transform: rotateZ(180deg);
+        border-radius: $--border-radius-circle;
+        color: $--color-text-placeholder;
+        transition: $--color-transition-base;
+
+        &:hover {
+          color: $--color-text-secondary;
+        }
+      }
+    }
+
+    &.is-disabled {
+      & .ml-input__inner {
+        cursor: not-allowed;
+
+        &:hover {
+          border-color: $--disabled-border-base;
+        }
+      }
+    }
+
+    &.is-focus .ml-input__inner {
+      border-color: $--color-primary;
+    }
+  }
+
+  > .ml-input {
+    display: block;
+  }
+
+  @include e(input) {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-left: 15px;
+    color: #666;
+    font-size: $--font-size-base;
+    appearance: none;
+    height: 28px;
+    background-color: transparent;
+    @include when(mini) {
+      height: 14px;
+    }
+  }
+
+  @include e(close) {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    z-index: $--index-top;
+    right: 25px;
+    color: $--color-text-placeholder;
+    line-height: 18px;
+    font-size: 14px;
+
+    &:hover {
+      color: $--color-text-secondary;
+    }
+  }
+
+  @include e(tags) {
+    position: absolute;
+    line-height: normal;
+    white-space: normal;
+    z-index: $--index-normal;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .ml-tag__close {
+    margin-top: -2px;
+  }
+
+  .ml-tag {
+    box-sizing: border-box;
+    border-color: transparent;
+    margin: 2px 0 2px 6px;
+    background-color: #f0f2f5;
+
+    &__close.ml-icon-close {
+      background-color: $--color-text-placeholder;
+      right: -7px;
+      top: 0;
+      color: $--color-white;
+
+      &:hover {
+        background-color: $--color-text-secondary;
+      }
+
+      &::before {
+        display: block;
+        transform: translate(0, 0.5px);
+      }
+    }
+  }
+}

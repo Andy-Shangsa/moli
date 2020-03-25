@@ -77,30 +77,46 @@ export default {
 
   render(h) {
     if (this.popperVM) {
-      this.popperVM.node = (
-        <transition name={this.transition} onAfterLeave={this.doDestroy}>
-          <div
-            onMouseleave={() => {
-              this.setExpectedState(false);
-              this.debounceClose();
-            }}
-            onMouseenter={() => {
-              this.setExpectedState(true);
-            }}
-            ref="popper"
-            role="tooltip"
-            id={this.tooltipId}
-            aria-hidden={this.disabled || !this.showPopper ? "true" : "false"}
-            v-show={!this.disabled && this.showPopper}
-            class={[
-              "ml-tooltip__popper",
-              "is-" + this.effect,
-              this.popperClass
-            ]}
-          >
-            {this.$slots.content || this.content}
-          </div>
-        </transition>
+      this.popperVM.node = h(
+        "transition",
+        {
+          props: { name: this.transition },
+          on: {
+            "after-leave": this.doDestroy
+          }
+        },
+        [
+          h(
+            "div",
+            {
+              ref: "popper",
+              class: [
+                "ml-tooltip__popper",
+                "is-" + this.effect,
+                this.popperClass
+              ],
+              attrs: {
+                role: "tooltip",
+                id: this.tooltipId,
+                "aria-hidden":
+                  this.disabled || !this.showPopper ? "true" : "false"
+              },
+              on: {
+                mouseleave: () => {
+                  this.setExpectedState(false);
+                  this.debounceClose();
+                },
+                mouseenter: () => {
+                  this.setExpectedState(true);
+                }
+              },
+              directives: [
+                { name: "show", value: !this.disabled && this.showPopper }
+              ]
+            },
+            this.$slots.content || this.content
+          )
+        ]
       );
     }
 

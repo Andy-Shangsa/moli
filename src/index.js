@@ -11,6 +11,8 @@ import Form from "./packages/form";
 import FormItem from "./packages/form-item";
 import Input from "./packages/input";
 import Select from "./packages/select";
+import Option from "./packages/option";
+import OptionGroup from './packages/option-group';
 import Tag from "./packages/tag";
 import Tooltip from "./packages/tooltip";
 
@@ -28,6 +30,8 @@ const components = {
   FormItem,
   Input,
   Select,
+  Option,
+  OptionGroup,
   Tag,
   Tooltip
 };
