@@ -234,7 +234,6 @@ export default {
     },
     emptyText() {
       if (this.loading) {
-        // 待处理
         return this.loadingText || this.t("moli.select.loading");
       } else {
         if (this.remote && this.query === "" && this.options.length === 0)

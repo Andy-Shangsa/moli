@@ -39,7 +39,6 @@ export default {
       return this.$refs.wrap;
     }
   },
-
   render(h) {
     let gutter = scrollbarWidth();
     let style = this.wrapStyle;
@@ -60,18 +59,17 @@ export default {
     const view = h(
       this.tag,
       {
-        class: ["ml-scrollbar__view", this.viewClass],
+        class: ["el-scrollbar__view", this.viewClass],
         style: this.viewStyle,
         ref: "resize"
       },
       this.$slots.default
     );
-
     const wrap = h(
       "div",
       {
         ref: "wrap",
-        style: this.style,
+        style: style,
         class: [
           this.wrapClass,
           "ml-scrollbar__wrap",
@@ -83,11 +81,10 @@ export default {
       },
       [view]
     );
-
     let nodes;
 
     if (!this.native) {
-      nodes = h("template", [
+      nodes = [
         wrap,
         h(Bar, {
           props: {
@@ -101,19 +98,21 @@ export default {
             move: this.moveY
           }
         })
-      ]);
+      ];
     } else {
-      nodes = h(
-        "div",
-        {
-          ref: "wrap",
-          style: style,
-          class: [this.wrapClass, "ml-scrollbar__wrap"]
-        },
-        [view]
-      );
+      nodes = [
+        h(
+          "div",
+          {
+            ref: "wrap",
+            style: style,
+            class: [this.wrapClass, "ml-scrollbar__wrap"]
+          },
+          [view]
+        )
+      ];
     }
-    return h("div", { class: "ml-scrollbar" }, [nodes]);
+    return h("div", { class: "ml-scrollbar" }, nodes);
   },
 
   methods: {

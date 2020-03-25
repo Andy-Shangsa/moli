@@ -23,7 +23,6 @@ export default {
 
   render(h) {
     const { size, move, bar } = this;
-
     return h(
       "div",
       {
