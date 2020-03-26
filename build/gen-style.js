@@ -10,7 +10,7 @@ function buildCss(cb) {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(rename('moli-ui.css'))
+    .pipe(rename('index.css'))
     .pipe(gulp.dest('../lib/styles'));
   cb()
 }
