@@ -1,6 +1,6 @@
 {
   "name": "moli-element",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "another light weight vue.js component library",
   "main": "lib/index.min.js",
   "dependencies": {

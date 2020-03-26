@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "alert";
 @import "button";
 @import "button-group";
 @import "radio";
@@ -14,6 +15,7 @@
 @import "tooltip";
 @import "select";
 @import "message";
+@import "message-box";
 @import "notify";
 @import "common/icon.scss";
 @import "common/transition.scss";

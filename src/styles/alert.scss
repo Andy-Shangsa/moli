@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+
+@include b(alert) {
+  width: 100%;
+  padding: 8px 16px;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+
+  @include when(light) {
+    .el-alert__closebtn {
+      color: $--color-text-placeholder;
+    }
+  }
+
+  @include when(dark) {
+    .el-alert__closebtn {
+      color: $--color-white;
+    }
+    .el-alert__description {
+      color: $--color-white;
+    }
+  }
+
+  @include when(center) {
+    justify-content: center;
+  }
+
+  @include m(success) {
+    &.is-light {
+      background-color: $--color-success-lighter;
+      color: $--color-success;
+
+      .el-alert__description {
+        color: $--color-success;
+      }
+    }
+
+    &.is-dark {
+      background-color: $--color-success;
+      color: $--color-white;
+    }
+  }
+
+  @include m(warning) {
+    &.is-light {
+      background-color: $--color-warning-lighter;
+      color: $--color-warning;
+
+      .el-alert__description {
+        color: $--color-warning;
+      }
+    }
+
+    &.is-dark {
+      background-color: $--color-warning;
+      color: $--color-white;
+    }
+  }
+
+  @include m(error) {
+    &.is-light {
+      background-color: $--color-danger-lighter;
+      color: $--color-danger;
+
+      .el-alert__description {
+        color: $--color-danger;
+      }
+    }
+
+    &.is-dark {
+      background-color: $--color-danger;
+      color: $--color-white;
+    }
+  }
+
+  @include m(info) {
+    &.is-light {
+      background-color: $--color-info-lighter;
+      color: $--color-info;
+    }
+
+    &.is-dark {
+      background-color: $--color-info;
+      color: $--color-white;
+    }
+  }
+
+  @include e(icon) {
+    font-size: 16px;
+    width: 16px;
+    @include when(big) {
+      font-size: 28px;
+      width: 28px;
+    }
+  }
+
+  @include e(content) {
+    display: table-cell;
+    padding: 0 8px;
+  }
+
+  @include e(title) {
+    font-size: 13px;
+    line-height: 18px;
+    @include when(bold) {
+      font-weight: bold;
+    }
+  }
+
+  @include e(description) {
+    font-size: 12px;
+    margin: 5px 0 0 0;
+  }
+
+  @include e(closebtn) {
+    font-size: 12px;
+    opacity: 1;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+
+    @include when(customed) {
+      font-style: normal;
+      font-size: 13px;
+      top: 9px;
+    }
+  }
+}
+
+.ml-alert-fade-enter,
+.ml-alert-fade-leave-active {
+  opacity: 0;
+}

@@ -45,7 +45,7 @@ module.exports = {
             {
               title: "通知组件",
               collapsable: false,
-              children: ["notice/message", "notice/notify"]
+              children: ["notice/alert", "notice/message","notice/message-box", "notice/notify"]
             },
             {
               title: "其他组件",

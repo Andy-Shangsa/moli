@@ -16,7 +16,9 @@ import OptionGroup from "./packages/option-group";
 import Tag from "./packages/tag";
 import Tooltip from "./packages/tooltip";
 import Message from "./packages/message";
+import MessageBox from "./packages/message-box";
 import Notify from "./packages/notify";
+import Alert from "./packages/alert";
 
 const components = {
   Button,
@@ -35,7 +37,8 @@ const components = {
   Option,
   OptionGroup,
   Tag,
-  Tooltip
+  Tooltip,
+  Alert
 };
 
 const install = function(Vue, opts = {}) {
@@ -48,6 +51,10 @@ const install = function(Vue, opts = {}) {
   };
   Vue.prototype.$message = Message;
   Vue.prototype.$notify = Notify;
+  Vue.prototype.$msgbox = MessageBox;
+  Vue.prototype.$alert = MessageBox.alert;
+  Vue.prototype.$confirm = MessageBox.confirm;
+  Vue.prototype.$prompt = MessageBox.prompt;
 };
 
 if (typeof window !== "undefined" && window.Vue) {

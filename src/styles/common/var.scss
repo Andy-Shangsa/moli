@@ -96,6 +96,7 @@ $--font-size-base: 14px !default;
 $--font-size-medium: 16px !default;
 $--font-weight-primary: 500 !default;
 $--font-weight-secondary: 100 !default;
+$--font-size-large: 18px !default;
 
 /* Disable base
 -------------------------- */
@@ -130,3 +131,10 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 $--index-normal: 1 !default;
 $--index-top: 1000 !default;
 $--index-popper: 2000 !default;
+
+/* Popup
+-------------------------- */
+/// color||Color|0
+$--popup-modal-background-color: $--color-black !default;
+/// opacity||Other|1
+$--popup-modal-opacity: 0.5 !default;
