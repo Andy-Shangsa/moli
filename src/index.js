@@ -12,9 +12,11 @@ import FormItem from "./packages/form-item";
 import Input from "./packages/input";
 import Select from "./packages/select";
 import Option from "./packages/option";
-import OptionGroup from './packages/option-group';
+import OptionGroup from "./packages/option-group";
 import Tag from "./packages/tag";
 import Tooltip from "./packages/tooltip";
+import Message from "./packages/message";
+import Notify from "./packages/notify";
 
 const components = {
   Button,
@@ -44,6 +46,8 @@ const install = function(Vue, opts = {}) {
     size: opts.size || "",
     zIndex: opts.zIndex || 2000
   };
+  Vue.prototype.$message = Message;
+  Vue.prototype.$notify = Notify;
 };
 
 if (typeof window !== "undefined" && window.Vue) {

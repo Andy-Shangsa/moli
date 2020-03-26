@@ -12,5 +12,7 @@
   "form-item": "packages/form-item/index.js",
   "form": "packages/form/index.js",
   "tooltip": "packages/tooltip/index.js",
-  "select": "packages/select/index.js"
+  "select": "packages/select/index.js",
+  "message": "packages/message/index.js",
+  "notify": "packages/notify/index.js"
 }

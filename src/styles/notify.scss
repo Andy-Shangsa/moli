@@ -1,0 +1,100 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(notify) {
+  display: flex;
+  width: 330px;
+  padding: 14px 26px 14px 13px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid $--border-color-lighter;
+  position: fixed;
+  background-color: $--color-white;
+  box-shadow: $--box-shadow-light;
+  transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s, top 0.4s,
+    bottom 0.3s;
+  overflow: hidden;
+
+  &.right {
+    right: 16px;
+  }
+
+  &.left {
+    left: 16px;
+  }
+
+  @include e(group) {
+    margin-left: 13px;
+    margin-right: 8px;
+  }
+
+  @include e(title) {
+    font-weight: bold;
+    font-size: 16px;
+    color: $--color-text-primary;
+    margin: 0;
+  }
+
+  @include e(content) {
+    font-size: $--font-size-base;
+    line-height: 21px;
+    margin: 6px 0 0 0;
+    color: $--color-text-regular;
+    text-align: justify;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @include e(icon) {
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+  }
+
+  @include e(closeBtn) {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    cursor: pointer;
+    color: $--color-text-secondary;
+    font-size: 16px;
+
+    &:hover {
+      color: $--color-text-regular;
+    }
+  }
+
+  & .ml-icon-success {
+    color: $--color-success;
+  }
+
+  & .ml-icon-close-fill {
+    color: $--color-danger;
+  }
+
+  & .ml-icon-info {
+    color: $--color-primary;
+  }
+
+  & .ml-icon-warning {
+    color: $--color-warning;
+  }
+}
+
+.ml-notify-fade-enter {
+  &.right {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &.left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.ml-notify-fade-leave-active {
+  opacity: 0;
+}

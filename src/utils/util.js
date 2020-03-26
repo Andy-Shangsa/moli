@@ -242,3 +242,11 @@ export function objToArray(obj) {
   }
   return isEmpty(obj) ? [] : [obj];
 }
+
+export function isVNode(node) {
+  return (
+    node !== null &&
+    typeof node === "object" &&
+    hasOwn(node, "componentOptions")
+  );
+}

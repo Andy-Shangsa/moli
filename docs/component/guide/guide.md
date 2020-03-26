@@ -5,10 +5,10 @@ title: 安装
 
 #### npm 安装
 ```
-npm install moli-ui  -S
+npm install moli-element  -S
 ```
 
 #### yarn 安装
 ```
-yarn add moli-ui
+yarn add moli-element
 ```

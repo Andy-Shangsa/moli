@@ -1,0 +1,120 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(message) {
+  min-width: 380px;
+  box-sizing: border-box;
+  border-radius: $--border-radius-base;
+  border-width: $--border-width-base;
+  border-style: $--border-style-base;
+  border-color: $--border-color-lighter;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: #edf2fc;
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
+  overflow: hidden;
+  padding: 15px 15px 15px 20px;
+  display: flex;
+  align-items: center;
+
+  @include when(center) {
+    justify-content: center;
+  }
+
+  @include when(closable) {
+    .ml-message__content {
+      padding-right: 16px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @include m(info) {
+    .ml-message__content {
+      color: $--color-primary;
+    }
+  }
+
+  @include m(success) {
+    background-color: $--color-success-lighter;
+    border-color: $--color-success-light;
+
+    .ml-message__content {
+      color: $--color-success;
+    }
+  }
+
+  @include m(warning) {
+    background-color: $--color-warning-lighter;
+    border-color: $--color-warning-light;
+
+    .ml-message__content {
+      color: $--color-warning;
+    }
+  }
+
+  @include m(error) {
+    background-color: $--color-danger-lighter;
+    border-color: $--color-danger-light;
+
+    .ml-message__content {
+      color: $--color-danger;
+    }
+  }
+
+  @include e(icon) {
+    margin-right: 10px;
+  }
+
+  @include e(content) {
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    &:focus {
+      outline-width: 0;
+    }
+  }
+
+  @include e(closeBtn) {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $--color-text-placeholder;
+    font-size: 14px;
+
+    &:focus {
+      outline-width: 0;
+    }
+    &:hover {
+      color: $--color-text-secondary;
+    }
+  }
+
+  & .ml-icon-success {
+    color: $--color-success;
+  }
+
+  & .ml-icon-close-fill {
+    color: $--color-danger;
+  }
+
+  & .ml-icon-info {
+    color: $--color-primary;
+  }
+
+  & .ml-icon-warning {
+    color: $--color-warning;
+  }
+}
+
+.ml-message-fade-enter,
+.ml-message-fade-leave-active {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
