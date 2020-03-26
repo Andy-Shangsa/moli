@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Moli UI",
+  title: "Moli",
   base: "/moli/",
   description: "一套基于 Vue 2.0 的桌面端组件库",
   port: 8080,
@@ -23,7 +23,7 @@ module.exports = {
             {
               title: "基础组件",
               collapsable: false,
-              children: ["basic/button"]
+              children: ["basic/layout", "basic/button"]
             },
             {
               title: "表单组件",
@@ -40,12 +40,18 @@ module.exports = {
             {
               title: "数据组件",
               collapsable: false,
-              children: ["data/tag"]
+              children: ["data/tag", "data/table"]
             },
             {
               title: "通知组件",
               collapsable: false,
-              children: ["notice/alert", "notice/message","notice/message-box", "notice/notify"]
+              children: [
+                "notice/alert",
+                "notice/loading",
+                "notice/message",
+                "notice/message-box",
+                "notice/notify"
+              ]
             },
             {
               title: "其他组件",

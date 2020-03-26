@@ -17,16 +17,16 @@
   transition: opacity 0.2s;
 
   @include when(light) {
-    .el-alert__closebtn {
+    .ml-alert__closebtn {
       color: $--color-text-placeholder;
     }
   }
 
   @include when(dark) {
-    .el-alert__closebtn {
+    .ml-alert__closebtn {
       color: $--color-white;
     }
-    .el-alert__description {
+    .ml-alert__description {
       color: $--color-white;
     }
   }
@@ -40,7 +40,7 @@
       background-color: $--color-success-lighter;
       color: $--color-success;
 
-      .el-alert__description {
+      .ml-alert__description {
         color: $--color-success;
       }
     }
@@ -56,7 +56,7 @@
       background-color: $--color-warning-lighter;
       color: $--color-warning;
 
-      .el-alert__description {
+      .ml-alert__description {
         color: $--color-warning;
       }
     }
@@ -72,7 +72,7 @@
       background-color: $--color-danger-lighter;
       color: $--color-danger;
 
-      .el-alert__description {
+      .ml-alert__description {
         color: $--color-danger;
       }
     }

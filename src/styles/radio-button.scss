@@ -91,36 +91,21 @@
     }
   }
 
-  //   @include m(medium) {
-  //     & .el-radio-button__inner {
-  //       @include button-size(
-  //         $--button-medium-padding-vertical,
-  //         $--button-medium-padding-horizontal,
-  //         $--button-medium-font-size,
-  //         0
-  //       );
-  //     }
-  //   }
-  //   @include m(small) {
-  //     & .el-radio-button__inner {
-  //       @include button-size(
-  //         $--button-small-padding-vertical,
-  //         $--button-small-padding-horizontal,
-  //         $--button-small-font-size,
-  //         0
-  //       );
-  //     }
-  //   }
-  //   @include m(mini) {
-  //     & .el-radio-button__inner {
-  //       @include button-size(
-  //         $--button-mini-padding-vertical,
-  //         $--button-mini-padding-horizontal,
-  //         $--button-mini-font-size,
-  //         0
-  //       );
-  //     }
-  //   }
+  @include m(medium) {
+    & .ml-radio-button__inner {
+      @include button-size(10px, 20px, $--font-size-base, 0);
+    }
+  }
+  @include m(small) {
+    & .ml-radio-button__inner {
+      @include button-size(9px, 15px, 12px, 0);
+    }
+  }
+  @include m(mini) {
+    & .ml-radio-button__inner {
+      @include button-size(7px, 15px, 12px, 0);
+    }
+  }
 
   &:focus:not(.is-focus):not(:active):not(.is-disabled) {
     /*获得焦点时 样式提醒*/

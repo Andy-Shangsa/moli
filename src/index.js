@@ -19,6 +19,11 @@ import Message from "./packages/message";
 import MessageBox from "./packages/message-box";
 import Notify from "./packages/notify";
 import Alert from "./packages/alert";
+import Loading from "./packages/loading";
+import Row from "./packages/row";
+import Col from "./packages/col";
+import Table from "./packages/table";
+import TableColumn from "./packages/tabel-column";
 
 const components = {
   Button,
@@ -38,7 +43,11 @@ const components = {
   OptionGroup,
   Tag,
   Tooltip,
-  Alert
+  Alert,
+  Row,
+  Col,
+  Table,
+  TableColumn
 };
 
 const install = function(Vue, opts = {}) {
@@ -49,12 +58,14 @@ const install = function(Vue, opts = {}) {
     size: opts.size || "",
     zIndex: opts.zIndex || 2000
   };
+  Vue.use(Loading.directive);
   Vue.prototype.$message = Message;
   Vue.prototype.$notify = Notify;
   Vue.prototype.$msgbox = MessageBox;
   Vue.prototype.$alert = MessageBox.alert;
   Vue.prototype.$confirm = MessageBox.confirm;
   Vue.prototype.$prompt = MessageBox.prompt;
+  Vue.prototype.$loading = Loading.service;
 };
 
 if (typeof window !== "undefined" && window.Vue) {

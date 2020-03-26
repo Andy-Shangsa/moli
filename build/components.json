@@ -1,4 +1,5 @@
 {
+  "alert": "packages/alert/index.js",
   "button": "packages/button/index.js",
   "button-group": "packages/button-group/index.js",
   "checkbox": "packages/checkbox/index.js",
@@ -14,5 +15,8 @@
   "tooltip": "packages/tooltip/index.js",
   "select": "packages/select/index.js",
   "message": "packages/message/index.js",
-  "notify": "packages/notify/index.js"
+  "message-box": "packages/message-box/index.js",
+  "notify": "packages/notify/index.js",
+  "table": "packages/table/index.js",
+  "table-column": "packages/table-column/index.js"
 }
