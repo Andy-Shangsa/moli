@@ -29,32 +29,37 @@ export const cellStarts = {
 export const cellForced = {
   selection: {
     renderHeader: function(h, { store }) {
-      return (
-        <ml-checkbox
-          disabled={store.states.data && store.states.data.length === 0}
-          indeterminate={
-            store.states.selection.length > 0 && !this.isAllSelected
-          }
-          nativeOn-click={this.toggleAllSelection}
-          value={this.isAllSelected}
-        />
-      );
+      return h("ml-checkbox", {
+        props: {
+          disabled: store.states.data && store.states.data.length === 0,
+          indeterminate:
+            store.states.selection.length > 0 && !this.isAllSelected,
+          value: this.isAllSelected
+        },
+        nativeOn: {
+          click: this.toggleAllSelection
+        }
+      });
     },
     renderCell: function(h, { row, column, store, $index }) {
-      return (
-        <ml-checkbox
-          nativeOn-click={event => event.stopPropagation()}
-          value={store.isSelected(row)}
-          disabled={
-            column.selectable
-              ? !column.selectable.call(null, row, $index)
-              : false
+      return h("ml-checkbox", {
+        props: {
+          disabled: column.selectable
+            ? !column.selectable.call(null, row, $index)
+            : false,
+          value: store.isSelected(row)
+        },
+        nativeOn: {
+          click: e => {
+            e.stopPropagation();
           }
-          on-input={() => {
+        },
+        on: {
+          input: () => {
             store.commit("rowSelectedChanged", row);
-          }}
-        />
-      );
+          }
+        }
+      });
     },
     sortable: false,
     resizable: false
@@ -73,7 +78,7 @@ export const cellForced = {
         i = index($index);
       }
 
-      return <div>{i}</div>;
+      return h("div", i);
     },
     sortable: false
   },
@@ -90,11 +95,14 @@ export const cellForced = {
         e.stopPropagation();
         store.toggleRowExpansion(row);
       };
-      return (
-        <div class={classes} on-click={callback}>
-          <i class="ml-icon ml-icon-arrow-right"></i>
-        </div>
-      );
+      return h("div", { class: classes, on: { click: callback } }, [
+        h("i", { class: "ml-icon ml-icon-arrow-right" })
+      ]);
+      // return (
+      //   <div class={classes} on-click={callback}>
+      //     <i class="ml-icon ml-icon-arrow-right"></i>
+      //   </div>
+      // );
     },
     sortable: false,
     resizable: false,
@@ -120,10 +128,10 @@ export function treeCellPrefix(h, { row, treeNode, store }) {
   };
   if (treeNode.indent) {
     ele.push(
-      <span
-        class="ml-table__indent"
-        style={{ "padding-left": treeNode.indent + "px" }}
-      ></span>
+      h("span", {
+        class: "ml-table__indent",
+        style: { "padding-left": treeNode.indent + "px" }
+      })
     );
   }
   if (typeof treeNode.expanded === "boolean" && !treeNode.noLazyChildren) {
@@ -136,12 +144,12 @@ export function treeCellPrefix(h, { row, treeNode, store }) {
       iconClasses = ["ml-icon-loading"];
     }
     ele.push(
-      <div class={expandClasses} on-click={callback}>
-        <i class={iconClasses}></i>
-      </div>
+      h("div", { class: expandClasses, on: { click: callback } }, [
+        h("i", { class: iconClasses })
+      ])
     );
   } else {
-    ele.push(<span class="ml-table__placeholder"></span>);
+    ele.push(h("span", { class: "ml-table__placeholder" }));
   }
   return ele;
 }

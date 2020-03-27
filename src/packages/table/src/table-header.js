@@ -74,115 +74,165 @@ export default {
     // 是否拥有多级表头
     const isGroup = columnRows.length > 1;
     if (isGroup) this.$parent.isGroup = true;
-    return (
-      <table
-        class="ml-table__header"
-        cellspacing="0"
-        cellpadding="0"
-        border="0"
-      >
-        <colgroup>
-          {this.columns.map(column => (
-            <col name={column.id} key={column.id} />
-          ))}
-          {this.hasGutter ? <col name="gutter" /> : ""}
-        </colgroup>
-        <thead class={[{ "is-group": isGroup, "has-gutter": this.hasGutter }]}>
-          {this._l(columnRows, (columns, rowIndex) => (
-            <tr
-              style={this.getHeaderRowStyle(rowIndex)}
-              class={this.getHeaderRowClass(rowIndex)}
-            >
-              {columns.map((column, cellIndex) => (
-                <th
-                  colspan={column.colSpan}
-                  rowspan={column.rowSpan}
-                  on-mousemove={$event => this.handleMouseMove($event, column)}
-                  on-mouseout={this.handleMouseOut}
-                  on-mousedown={$event => this.handleMouseDown($event, column)}
-                  on-click={$event => this.handleHeaderClick($event, column)}
-                  on-contextmenu={$event =>
-                    this.handleHeaderContextMenu($event, column)
-                  }
-                  style={this.getHeaderCellStyle(
-                    rowIndex,
-                    cellIndex,
-                    columns,
-                    column
-                  )}
-                  class={this.getHeaderCellClass(
-                    rowIndex,
-                    cellIndex,
-                    columns,
-                    column
-                  )}
-                  key={column.id}
-                >
-                  <div
-                    class={[
-                      "cell",
-                      column.filteredValue && column.filteredValue.length > 0
-                        ? "highlight"
-                        : "",
-                      column.labelClassName
-                    ]}
-                  >
-                    {column.renderHeader
-                      ? column.renderHeader.call(this._renderProxy, h, {
-                          column,
-                          $index: cellIndex,
-                          store: this.store,
-                          _self: this.$parent.$vnode.context
-                        })
-                      : column.label}
-                    {column.sortable ? (
-                      <span
-                        class="caret-wrapper"
-                        on-click={$event =>
-                          this.handleSortClick($event, column)
-                        }
-                      >
-                        <i
-                          class="sort-caret ascending"
-                          on-click={$event =>
-                            this.handleSortClick($event, column, "ascending")
+
+    return h(
+      "table",
+      {
+        class: "table__header",
+        attrs: { cellspacing: 0, cellpadding: 0, border: 0 }
+      },
+      [
+        h("colgroup", [
+          ...this.columns.map(column => {
+            return h("col", { attrs: { name: column.id, key: column.id } });
+          }),
+          this.hasGutter ? h("col", { attrs: { name: "gutter" } }) : ""
+        ]),
+        h(
+          "thead",
+          { class: [{ "is-group": isGroup, "has-gutter": this.hasGutter }] },
+          [
+            ...this._l(columnRows, (columns, rowIndex) => {
+              return h(
+                "tr",
+                {
+                  style: this.getHeaderRowStyle(rowIndex),
+                  class: this.getHeaderRowClass(rowIndex)
+                },
+                [
+                  ...columns.map((column, cellIndex) => {
+                    return h(
+                      "th",
+                      {
+                        attrs: {
+                          colspan: column.colSpan,
+                          rowspan: column.rowSpan
+                        },
+                        on: {
+                          mousemove: e => {
+                            this.handleMouseMove(e, column);
+                          },
+                          mouseout: this.handleMouseOut,
+                          mousedown: e => {
+                            this.handleMouseDown(e, column);
+                          },
+                          click: e => {
+                            this.handleHeaderClick(e, column);
+                          },
+                          contextmenu: e => {
+                            this.handleHeaderContextMenu(e, column);
                           }
-                        ></i>
-                        <i
-                          class="sort-caret descending"
-                          on-click={$event =>
-                            this.handleSortClick($event, column, "descending")
-                          }
-                        ></i>
-                      </span>
-                    ) : (
-                      ""
-                    )}
-                    {column.filterable ? (
-                      <span
-                        class="ml-table__column-filter-trigger"
-                        on-click={$event =>
-                          this.handleFilterClick($event, column)
-                        }
-                      >
-                        <i
-                          class={[
-                            "ml-icon-arrow-down",
-                            column.filterOpened ? "ml-icon-arrow-up" : ""
-                          ]}
-                        ></i>
-                      </span>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </th>
-              ))}
-              {this.hasGutter ? <th class="gutter"></th> : ""}
-            </tr>
-          ))}
-        </thead>
-      </table>
+                        },
+                        style: this.getHeaderCellStyle(
+                          rowIndex,
+                          cellIndex,
+                          columns,
+                          column
+                        ),
+                        class: this.getHeaderCellClass(
+                          rowIndex,
+                          cellIndex,
+                          columns,
+                          column
+                        ),
+                        key: column.id
+                      },
+                      [
+                        h(
+                          "div",
+                          {
+                            class: [
+                              "cell",
+                              column.filteredValue &&
+                              column.filteredValue.length > 0
+                                ? "highlight"
+                                : "",
+                              column.labelClassName
+                            ]
+                          },
+                          [
+                            column.renderHeader
+                              ? column.renderHeader.call(this._renderProxy, h, {
+                                  column,
+                                  $index: cellIndex,
+                                  store: this.store,
+                                  _self: this.$parent.$vnode.context
+                                })
+                              : column.label,
+                            column.filterable
+                              ? h(
+                                  "span",
+                                  {
+                                    class: "ml-table__column-filter-trigger",
+                                    on: {
+                                      click: e => {
+                                        this.handleFilterClick(e, column);
+                                      }
+                                    }
+                                  },
+                                  [
+                                    h("i", {
+                                      class: [
+                                        "ml-icon-arrow-down",
+                                        column.filterOpened
+                                          ? "ml-icon-arrow-up"
+                                          : ""
+                                      ]
+                                    })
+                                  ]
+                                )
+                              : "",
+                            column.sortable
+                              ? h(
+                                  "span",
+                                  {
+                                    class: "caret-wrapper",
+                                    on: {
+                                      click: e => {
+                                        this.handleSortClick(e, column);
+                                      }
+                                    }
+                                  },
+                                  [
+                                    h("i", {
+                                      class: "sort-caret ascending",
+                                      on: {
+                                        click: e => {
+                                          this.handleSortClick(
+                                            e,
+                                            column,
+                                            "ascending"
+                                          );
+                                        }
+                                      }
+                                    }),
+                                    h("i", {
+                                      class: "sort-caret descending",
+                                      on: {
+                                        click: e => {
+                                          this.handleSortClick(
+                                            e,
+                                            column,
+                                            "descending"
+                                          );
+                                        }
+                                      }
+                                    })
+                                  ]
+                                )
+                              : ""
+                          ]
+                        )
+                      ]
+                    );
+                  }),
+                  this.hasGutter ? h("th", { class: "gutterr" }) : ""
+                ]
+              );
+            })
+          ]
+        )
+      ]
     );
   },
 

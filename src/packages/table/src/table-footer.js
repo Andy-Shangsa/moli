@@ -47,37 +47,50 @@ export default {
       });
     }
 
-    return (
-      <table
-        class="ml-table__footer"
-        cellspacing="0"
-        cellpadding="0"
-        border="0"
-      >
-        <colgroup>
-          {this.columns.map(column => (
-            <col name={column.id} key={column.id} />
-          ))}
-          {this.hasGutter ? <col name="gutter" /> : ""}
-        </colgroup>
-        <tbody class={[{ "has-gutter": this.hasGutter }]}>
-          <tr>
-            {this.columns.map((column, cellIndex) => (
-              <td
-                key={cellIndex}
-                colspan={column.colSpan}
-                rowspan={column.rowSpan}
-                class={this.getRowClasses(column, cellIndex)}
-              >
-                <div class={["cell", column.labelClassName]}>
-                  {sums[cellIndex]}
-                </div>
-              </td>
-            ))}
-            {this.hasGutter ? <th class="gutter"></th> : ""}
-          </tr>
-        </tbody>
-      </table>
+    const elCol = this.columns.map(column => {
+      return h("col", { attrs: { name: column.id, key: column.id } });
+    });
+
+    return h(
+      "table",
+      {
+        class: "ml-table__footer",
+        attrs: { cellspacing: 0, cellpadding: 0, border: 0 }
+      },
+      [
+        h("colgroup", [
+          ...elCol,
+          this.hasGutter ? h("col", { attrs: { name: "gutter" } }) : ""
+        ]),
+        h(
+          "tbody",
+          {
+            class: [{ "has-gutter": this.hasGutter }]
+          },
+          [
+            h("tr", [
+              ...this.columns.map((column, cellIndex) => {
+                return h(
+                  "td",
+                  {
+                    key: cellIndex,
+                    class: this.getRowClasses(column, cellIndex),
+                    attrs: { colSpan: column.colSpan, rowSpan: column.rowSpan }
+                  },
+                  [
+                    h(
+                      "div",
+                      { class: ["cell", column.labelClassName] },
+                      sums[cellIndex]
+                    ),
+                    this.hasGutter ? h("th", { class: "gutter" }) : null
+                  ]
+                );
+              })
+            ])
+          ]
+        )
+      ]
     );
   },
 
