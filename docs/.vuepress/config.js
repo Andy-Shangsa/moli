@@ -32,6 +32,8 @@ module.exports = {
                 "form/radio",
                 "form/checkbox",
                 "form/input",
+                "form/input-number",
+                "form/slider",
                 "form/select",
                 "form/switch",
                 "form/form"
@@ -40,7 +42,7 @@ module.exports = {
             {
               title: "数据组件",
               collapsable: false,
-              children: ["data/tag", "data/table"]
+              children: ["data/tag", "data/table", "data/badge"]
             },
             {
               title: "通知组件",

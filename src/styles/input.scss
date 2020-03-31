@@ -1,8 +1,13 @@
 @import "mixins/mixins";
 @import "common/var";
 
-$--input-width: 140px !default;
 $--input-height: 40px !default;
+$--input-medium-font-size: 14px !default;
+$--input-medium-height: 36px !default;
+$--input-small-font-size: 13px !default;
+$--input-small-height: 32px !default;
+$--input-mini-font-size: 12px !default;
+$--input-mini-height: 28px !default;
 
 @include b(textarea) {
   position: relative;
@@ -230,42 +235,42 @@ $--input-height: 40px !default;
     }
   }
 
-  //   @include m(medium) {
-  //     font-size: $--input-medium-font-size;
+  @include m(medium) {
+    font-size: $--input-medium-font-size;
 
-  //     @include e(inner) {
-  //       height: $--input-medium-height;
-  //       line-height: $--input-medium-height;
-  //     }
+    @include e(inner) {
+      height: $--input-medium-height;
+      line-height: $--input-medium-height;
+    }
 
-  //     .ml-input__icon {
-  //       line-height: $--input-medium-height;
-  //     }
-  //   }
-  //   @include m(small) {
-  //     font-size: $--input-small-font-size;
+    .ml-input__icon {
+      line-height: $--input-medium-height;
+    }
+  }
+  @include m(small) {
+    font-size: $--input-small-font-size;
 
-  //     @include e(inner) {
-  //       height: $--input-small-height;
-  //       line-height: $--input-small-height;
-  //     }
+    @include e(inner) {
+      height: $--input-small-height;
+      line-height: $--input-small-height;
+    }
 
-  //     .ml-input__icon {
-  //       line-height: $--input-small-height;
-  //     }
-  //   }
-  //   @include m(mini) {
-  //     font-size: $--input-mini-font-size;
+    .ml-input__icon {
+      line-height: $--input-small-height;
+    }
+  }
+  @include m(mini) {
+    font-size: $--input-mini-font-size;
 
-  //     @include e(inner) {
-  //       height: $--input-mini-height;
-  //       line-height: $--input-mini-height;
-  //     }
+    @include e(inner) {
+      height: $--input-mini-height;
+      line-height: $--input-mini-height;
+    }
 
-  //     .ml-input__icon {
-  //       line-height: $--input-mini-height;
-  //     }
-  //   }
+    .ml-input__icon {
+      line-height: $--input-mini-height;
+    }
+  }
 }
 
 // @include b(input-group) {

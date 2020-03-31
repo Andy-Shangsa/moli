@@ -74,9 +74,10 @@ title: Switch 开关
     </ml-switch>
   </template>
   <template slot="value">
-    <ml-switch v-model="model" active-color="#13ce66" inactive-color="#ff4949" active-value="100" inactive-value="0">
-    </ml-switch>
-    <span>{{model}}</span>
+    <ml-tooltip :content="'Switch value: ' + model" placement="top">
+      <ml-switch v-model="model" active-color="#13ce66" inactive-color="#ff4949" active-value="100" inactive-value="0">
+      </ml-switch>
+    </ml-tooltip>
   </template>
 </block>
 
@@ -88,7 +89,7 @@ title: Switch 开关
 
 ### 属性
 
-| 参数            | 说明     | 类型                      | 可选值 | 默认值 |
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | --------------- | -------- | ------------------------- | ------ | ------ |
-| value / v-model | 绑定值   | string / number / boolean | -      | -      |
-| disabled        | 禁用状态 | blooean                   | -      | false  |
+| value / v-model | 绑定值 | string / number / boolean | - | - |
+| disabled | 禁用状态 | blooean | - | false |

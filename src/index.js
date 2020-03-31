@@ -10,6 +10,7 @@ import Switch from "./packages/switch";
 import Form from "./packages/form";
 import FormItem from "./packages/form-item";
 import Input from "./packages/input";
+import InputNumber from "./packages/input-number";
 import Select from "./packages/select";
 import Option from "./packages/option";
 import OptionGroup from "./packages/option-group";
@@ -23,7 +24,9 @@ import Loading from "./packages/loading";
 import Row from "./packages/row";
 import Col from "./packages/col";
 import Table from "./packages/table";
-import TableColumn from "./packages/tabel-column";
+import TableColumn from "./packages/table-column";
+import Slider from "./packages/slider";
+import Badge from "./packages/badge";
 
 const components = {
   Button,
@@ -38,6 +41,7 @@ const components = {
   Form,
   FormItem,
   Input,
+  InputNumber,
   Select,
   Option,
   OptionGroup,
@@ -47,7 +51,9 @@ const components = {
   Row,
   Col,
   Table,
-  TableColumn
+  TableColumn,
+  Slider,
+  Badge
 };
 
 const install = function(Vue, opts = {}) {

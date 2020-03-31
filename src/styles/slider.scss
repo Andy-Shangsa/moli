@@ -1,0 +1,261 @@
+@import "mixins/mixins";
+@import "mixins/utils";
+@import "input-number";
+@import "tooltip";
+@import "common/var";
+
+$--slider-main-background-color: $--color-primary !default;
+/// color||Color|0
+$--slider-runway-background-color: $--border-color-light !default;
+$--slider-button-hover-color: mix($--color-primary, black, 97%) !default;
+$--slider-stop-background-color: $--color-white !default;
+$--slider-disable-color: $--color-text-placeholder !default;
+$--slider-margin: 16px 0 !default;
+$--slider-border-radius: 3px !default;
+/// height|1|Other|4
+$--slider-height: 6px !default;
+/// height||Other|4
+$--slider-button-size: 16px !default;
+$--slider-button-wrapper-size: 36px !default;
+$--slider-button-wrapper-offset: -15px !default;
+
+@include b(slider) {
+  @include utils-clearfix;
+
+  @include e(runway) {
+    width: 100%;
+    height: $--slider-height;
+    margin: $--slider-margin;
+    background-color: $--slider-runway-background-color;
+    border-radius: $--slider-border-radius;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+
+    &.show-input {
+      margin-right: 160px;
+      width: auto;
+    }
+
+    &.disabled {
+      cursor: default;
+
+      .ml-slider__bar {
+        background-color: $--slider-disable-color;
+      }
+
+      .ml-slider__button {
+        border-color: $--slider-disable-color;
+      }
+
+      .ml-slider__button-wrapper {
+        &:hover,
+        &.hover {
+          cursor: not-allowed;
+        }
+
+        &.dragging {
+          cursor: not-allowed;
+        }
+      }
+
+      .ml-slider__button {
+        &:hover,
+        &.hover,
+        &.dragging {
+          transform: scale(1);
+        }
+
+        &:hover,
+        &.hover {
+          cursor: not-allowed;
+        }
+
+        &.dragging {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  @include e(input) {
+    float: right;
+    margin-top: 3px;
+    width: 130px;
+
+    &.ml-input-number--mini {
+      margin-top: 5px;
+    }
+
+    &.ml-input-number--medium {
+      margin-top: 0;
+    }
+
+    &.ml-input-number--large {
+      margin-top: -2px;
+    }
+  }
+
+  @include e(bar) {
+    height: $--slider-height;
+    background-color: $--slider-main-background-color;
+    border-top-left-radius: $--slider-border-radius;
+    border-bottom-left-radius: $--slider-border-radius;
+    position: absolute;
+  }
+
+  @include e(button-wrapper) {
+    height: $--slider-button-wrapper-size;
+    width: $--slider-button-wrapper-size;
+    position: absolute;
+    z-index: 1001;
+    top: $--slider-button-wrapper-offset;
+    transform: translateX(-50%);
+    background-color: transparent;
+    text-align: center;
+    user-select: none;
+    line-height: normal;
+    @include utils-vertical-center;
+
+    .ml-tooltip {
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    &:hover,
+    &.hover {
+      cursor: grab;
+    }
+
+    &.dragging {
+      cursor: grabbing;
+    }
+  }
+
+  @include e(button) {
+    width: $--slider-button-size;
+    height: $--slider-button-size;
+    border: solid 2px $--slider-main-background-color;
+    background-color: $--color-white;
+    border-radius: 50%;
+    transition: 0.2s;
+    user-select: none;
+
+    &:hover,
+    &.hover,
+    &.dragging {
+      transform: scale(1.2);
+    }
+
+    &:hover,
+    &.hover {
+      cursor: grab;
+    }
+
+    &.dragging {
+      cursor: grabbing;
+    }
+  }
+
+  @include e(stop) {
+    position: absolute;
+    height: $--slider-height;
+    width: $--slider-height;
+    border-radius: $--border-radius-circle;
+    background-color: $--slider-stop-background-color;
+    transform: translateX(-50%);
+  }
+
+  @include e(marks) {
+    top: 0;
+    left: 12px;
+    width: 18px;
+    height: 100%;
+
+    @include e(marks-text) {
+      position: absolute;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: $--color-info;
+      margin-top: 15px;
+    }
+  }
+
+  @include when(vertical) {
+    position: relative;
+    .ml-slider__runway {
+      width: $--slider-height;
+      height: 100%;
+      margin: 0 16px;
+    }
+    .ml-slider__bar {
+      width: $--slider-height;
+      height: auto;
+      border-radius: 0 0 3px 3px;
+    }
+    .ml-slider__button-wrapper {
+      top: auto;
+      left: $--slider-button-wrapper-offset;
+      transform: translateY(50%);
+    }
+    .ml-slider__stop {
+      transform: translateY(50%);
+    }
+    &.ml-slider--with-input {
+      padding-bottom: #{$--input-medium-height + 22px};
+      .ml-slider__input {
+        overflow: visible;
+        float: none;
+        position: absolute;
+        bottom: 22px;
+        width: 36px;
+        margin-top: 15px;
+        .ml-input__inner {
+          text-align: center;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .ml-input-number__decrease,
+        .ml-input-number__increase {
+          top: $--input-small-height;
+          margin-top: -1px;
+          border: $--border-base;
+          line-height: 20px;
+          box-sizing: border-box;
+          transition: $--border-transition-base;
+        }
+        .ml-input-number__decrease {
+          width: 18px;
+          right: 18px;
+          border-bottom-left-radius: $--border-radius-base;
+        }
+        .ml-input-number__increase {
+          width: 19px;
+          border-bottom-right-radius: $--border-radius-base;
+          & ~ .ml-input .ml-input__inner {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+        &:hover {
+          .ml-input-number__decrease,
+          .ml-input-number__increase {
+            border-color: $--border-color-hover;
+          }
+        }
+        &:active {
+          .ml-input-number__decrease,
+          .ml-input-number__increase {
+            border-color: $--color-primary;
+          }
+        }
+      }
+    }
+
+    @include e(marks-text) {
+      margin-top: 0;
+      left: 15px;
+      transform: translateY(50%);
+    }
+  }
+}
