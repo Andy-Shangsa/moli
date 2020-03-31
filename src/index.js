@@ -27,6 +27,8 @@ import Table from "./packages/table";
 import TableColumn from "./packages/table-column";
 import Slider from "./packages/slider";
 import Badge from "./packages/badge";
+import Progress from "./packages/progress";
+import Pagination from "./packages/pagination";
 
 const components = {
   Button,
@@ -53,7 +55,9 @@ const components = {
   Table,
   TableColumn,
   Slider,
-  Badge
+  Badge,
+  Progress,
+  Pagination
 };
 
 const install = function(Vue, opts = {}) {

@@ -42,7 +42,7 @@ module.exports = {
             {
               title: "数据组件",
               collapsable: false,
-              children: ["data/tag", "data/table", "data/badge"]
+              children: ["data/tag", "data/table", "data/badge", "data/progress", "data/pagination"]
             },
             {
               title: "通知组件",

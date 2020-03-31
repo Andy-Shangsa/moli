@@ -1,5 +1,5 @@
 ---
-title: Slider
+title: Slider 滑块
 ---
 
 <script>

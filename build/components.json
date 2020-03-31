@@ -18,5 +18,7 @@
   "message-box": "packages/message-box/index.js",
   "notify": "packages/notify/index.js",
   "table": "packages/table/index.js",
-  "table-column": "packages/table-column/index.js"
+  "table-column": "packages/table-column/index.js",
+  "progress": "packages/progress/index.js",
+  "pagination": "packages/pagination/index.js"
 }
