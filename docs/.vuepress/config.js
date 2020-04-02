@@ -76,6 +76,9 @@ module.exports = {
               collapsable: false,
               children: [
                 "other/tooltip",
+                "other/popover",
+                "other/popconfirm",
+                "other/image",
                 "other/timeline",
                 "other/collapse",
                 "other/backtop"

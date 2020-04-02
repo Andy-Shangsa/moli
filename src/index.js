@@ -45,6 +45,9 @@ import MenuItemGroup from "./packages/menu-item-group/index.js";
 import Dropdown from "./packages/dropdown";
 import DropdownItem from "./packages/dropdown-item";
 import DropdownMenu from "./packages/dropdown-menu";
+import Popover from "./packages/popover";
+import Popconfirm from "./packages/popconfirm";
+import Image from "./packages/image";
 
 const components = {
   Button,
@@ -89,7 +92,10 @@ const components = {
   MenuItemGroup,
   Dropdown,
   DropdownItem,
-  DropdownMenu
+  DropdownMenu,
+  Popover,
+  Popconfirm,
+  Image
 };
 
 const install = function(Vue, opts = {}) {

@@ -99,6 +99,12 @@ $--font-weight-secondary: 100 !default;
 $--font-size-large: 18px !default;
 $--font-size-small: 13px !default;
 
+/* z-index
+-------------------------- */
+$--index-normal: 1 !default;
+$--index-top: 1000 !default;
+$--index-popper: 2000 !default;
+
 /* Disable base
 -------------------------- */
 $--disabled-fill-base: $--background-color-base !default;
