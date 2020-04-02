@@ -28,9 +28,6 @@ export default {
       default: "default"
     },
     size: {
-      validator(value) {
-        return oneOf(value, ["medium", "small", "mini"]);
-      },
       type: String
     },
     nativeType: {

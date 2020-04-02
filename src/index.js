@@ -29,6 +29,22 @@ import Slider from "./packages/slider";
 import Badge from "./packages/badge";
 import Progress from "./packages/progress";
 import Pagination from "./packages/pagination";
+import Breadcrumb from "./packages/breadcrumb";
+import BreadcrumbItem from "./packages/breadcrumb-item";
+import Step from "./packages/step";
+import Steps from "./packages/steps";
+import Backtop from "./packages/backtop";
+import Timeline from "./packages/timeline";
+import TimelineItem from "./packages/timeline-item";
+import Collapse from "./packages/collapse";
+import CollapseItem from "./packages/collapse-item";
+import Menu from "./packages/menu/index.js";
+import Submenu from "./packages/submenu/index.js";
+import MenuItem from "./packages/menu-item/index.js";
+import MenuItemGroup from "./packages/menu-item-group/index.js";
+import Dropdown from "./packages/dropdown";
+import DropdownItem from "./packages/dropdown-item";
+import DropdownMenu from "./packages/dropdown-menu";
 
 const components = {
   Button,
@@ -57,7 +73,23 @@ const components = {
   Slider,
   Badge,
   Progress,
-  Pagination
+  Pagination,
+  Breadcrumb,
+  BreadcrumbItem,
+  Step,
+  Steps,
+  Backtop,
+  Timeline,
+  TimelineItem,
+  Collapse,
+  CollapseItem,
+  Menu,
+  Submenu,
+  MenuItem,
+  MenuItemGroup,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu
 };
 
 const install = function(Vue, opts = {}) {

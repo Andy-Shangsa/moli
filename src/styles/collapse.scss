@@ -1,0 +1,64 @@
+@import "mixins/mixins";
+@import "common/var";
+@import "common/transition";
+
+@include b(collapse) {
+  border-top: 1px solid $--border-color-lighter;
+  border-bottom: 1px solid $--border-color-lighter;
+}
+
+@include b(collapse-item) {
+  @include when(disabled) {
+    .ml-collapse-item__header {
+      color: $--font-color-disabled-base;
+      cursor: not-allowed;
+    }
+  }
+  @include e(header) {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    line-height: 48px;
+    background-color: $--color-white;
+    color: $--color-text-primary;
+    cursor: pointer;
+    border-bottom: 1px solid $--border-color-lighter;
+    font-size: 13px;
+    font-weight: 500;
+    transition: border-bottom-color 0.3s;
+    outline: none;
+    @include e(arrow) {
+      margin: 0 8px 0 auto;
+      transition: transform 0.3s;
+      font-weight: 300;
+      @include when(active) {
+        transform: rotate(90deg);
+      }
+    }
+    &.focusing:focus:not(:hover) {
+      color: $--color-primary;
+    }
+    @include when(active) {
+      border-bottom-color: transparent;
+    }
+  }
+
+  @include e(wrap) {
+    will-change: height;
+    background-color: $--color-white;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-bottom: 1px solid $--border-color-lighter;
+  }
+
+  @include e(content) {
+    padding-bottom: 25px;
+    font-size: 13px;
+    color: $--color-text-primary;
+    line-height: 1.769230769230769;
+  }
+
+  &:last-child {
+    margin-bottom: -1px;
+  }
+}

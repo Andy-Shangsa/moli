@@ -97,12 +97,14 @@ $--font-size-medium: 16px !default;
 $--font-weight-primary: 500 !default;
 $--font-weight-secondary: 100 !default;
 $--font-size-large: 18px !default;
+$--font-size-small: 13px !default;
 
 /* Disable base
 -------------------------- */
 $--disabled-fill-base: $--background-color-base !default;
 $--disabled-color-base: $--color-text-placeholder !default;
 $--disabled-border-base: $--border-color-light !default;
+$--font-color-disabled-base: #bbb !default;
 
 /* Fill
 -------------------------- */

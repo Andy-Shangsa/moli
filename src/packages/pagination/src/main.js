@@ -77,36 +77,36 @@ export default {
     )
       return null;
 
-    let template = (
-      <div
-        class={[
-          "ml-pagination",
-          {
-            "is-background": this.background,
-            "ml-pagination--small": this.small
-          }
-        ]}
-      ></div>
-    );
+    let template = h("div", {
+      class: [
+        "ml-pagination",
+        {
+          "is-background": this.background,
+          "ml-pagination--small": this.small
+        }
+      ]
+    });
     const TEMPLATE_MAP = {
-      prev: <prev></prev>,
-      jumper: <jumper></jumper>,
-      pager: (
-        <pager
-          currentPage={this.internalCurrentPage}
-          pageCount={this.internalPageCount}
-          pagerCount={this.pagerCount}
-          on-change={this.handleCurrentChange}
-          disabled={this.disabled}
-        ></pager>
-      ),
-      next: <next></next>,
-      sizes: <sizes pageSizes={this.pageSizes}></sizes>,
-      slot: <slot>{this.$slots.default ? this.$slots.default : ""}</slot>,
-      total: <total></total>
+      prev: h("prev"),
+      jumper: h("jumper"),
+      pager: h("pager", {
+        attrs: {
+          currentPage: this.internalCurrentPage,
+          pageCount: this.internalPageCount,
+          pagerCount: this.pagerCount,
+          disabled: this.disabled
+        },
+        on: {
+          change: this.handleCurrentChange
+        }
+      }),
+      next: h("next"),
+      sizes: h("sizes", { attrs: { pageSizes: this.pageSizes } }),
+      slot: this.$slots.default ? this.$slots.default : "",
+      total: h("total")
     };
     const components = layout.split(",").map(item => item.trim());
-    const rightWrapper = <div class="ml-pagination__rightwrapper"></div>;
+    const rightWrapper = h("div", { class: "ml-pagination__rightwrapper" });
     let haveRightWrapper = false;
 
     template.children = template.children || [];

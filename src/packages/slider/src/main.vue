@@ -155,7 +155,7 @@ export default {
           this.firstValue = val[0];
           this.secondValue = val[1];
           if (this.valueChanged()) {
-            this.dispatch("ElFormItem", "el.form.change", [
+            this.dispatch("MlFormItem", "moli.form.change", [
               this.minValue,
               this.maxValue
             ]);
@@ -170,7 +170,7 @@ export default {
         } else {
           this.firstValue = val;
           if (this.valueChanged()) {
-            this.dispatch("ElFormItem", "el.form.change", val);
+            this.dispatch("MlFormItem", "moli.form.change", val);
             this.oldValue = val;
           }
         }

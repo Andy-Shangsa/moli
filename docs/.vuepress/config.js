@@ -42,7 +42,13 @@ module.exports = {
             {
               title: "数据组件",
               collapsable: false,
-              children: ["data/tag", "data/table", "data/badge", "data/progress", "data/pagination"]
+              children: [
+                "data/tag",
+                "data/table",
+                "data/badge",
+                "data/progress",
+                "data/pagination"
+              ]
             },
             {
               title: "通知组件",
@@ -56,9 +62,24 @@ module.exports = {
               ]
             },
             {
+              title: "导航组件",
+              collapsable: false,
+              children: [
+                "navigation/menu",
+                "navigation/dropdown",
+                "navigation/breadcrumb",
+                "navigation/steps"
+              ]
+            },
+            {
               title: "其他组件",
               collapsable: false,
-              children: ["other/tooltip"]
+              children: [
+                "other/tooltip",
+                "other/timeline",
+                "other/collapse",
+                "other/backtop"
+              ]
             }
           ]
         }
