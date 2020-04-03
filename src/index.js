@@ -48,6 +48,9 @@ import DropdownMenu from "./packages/dropdown-menu";
 import Popover from "./packages/popover";
 import Popconfirm from "./packages/popconfirm";
 import Image from "./packages/image";
+import Swiper from "./packages/swiper";
+import SwiperItem from "./packages/swiper-item";
+import Rate from "./packages/rate";
 
 const components = {
   Button,
@@ -95,7 +98,10 @@ const components = {
   DropdownMenu,
   Popover,
   Popconfirm,
-  Image
+  Image,
+  Swiper,
+  SwiperItem,
+  Rate
 };
 
 const install = function(Vue, opts = {}) {

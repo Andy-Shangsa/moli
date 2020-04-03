@@ -1,0 +1,168 @@
+@import "mixins/mixins";
+@import "common/var";
+
+$--swiper-indicator-height: 2px !default;
+$--swiper-indicator-padding-horizontal: 4px !default;
+$--swiper-indicator-padding-vertical: 12px !default;
+
+@include b(swiper) {
+  position: relative;
+
+  @include m(horizontal) {
+    overflow-x: hidden;
+  }
+
+  @include m(vertical) {
+    overflow-y: hidden;
+  }
+
+  @include e(container) {
+    position: relative;
+    height: 300px;
+  }
+
+  @include e(arrow) {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50%;
+    background-color: rgba(31, 45, 61, 0.11);
+    color: $--color-white;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 12px;
+
+    @include m(left) {
+      left: 16px;
+    }
+
+    @include m(right) {
+      right: 16px;
+    }
+
+    &:hover {
+      background-color: rgba(31, 45, 61, 0.23);
+    }
+
+    & i {
+      cursor: pointer;
+    }
+  }
+
+  @include e(indicators) {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: #{$--index-normal + 1};
+
+    @include m(horizontal) {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include m(vertical) {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include m(outside) {
+      bottom: #{$--swiper-indicator-height +
+        $--swiper-indicator-padding-vertical * 2};
+      text-align: center;
+      position: static;
+      transform: none;
+      .ml-carousel__indicator:hover button {
+        opacity: 0.64;
+      }
+      button {
+        background-color: $--border-color-hover;
+        opacity: 0.24;
+      }
+    }
+
+    @include m(labels) {
+      left: 0;
+      right: 0;
+      transform: none;
+      text-align: center;
+
+      .ml-carousel__button {
+        height: auto;
+        width: auto;
+        padding: 2px 18px;
+        font-size: 12px;
+      }
+
+      .ml-carousel__indicator {
+        padding: 6px 4px;
+      }
+    }
+  }
+
+  @include e(indicator) {
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover button {
+      opacity: 0.72;
+    }
+
+    @include m(horizontal) {
+      display: inline-block;
+      padding: $--swiper-indicator-padding-vertical
+        $--swiper-indicator-padding-horizontal;
+    }
+
+    @include m(vertical) {
+      padding: $--swiper-indicator-padding-horizontal
+        $--swiper-indicator-padding-vertical;
+      .ml-carousel__button {
+        width: $--swiper-indicator-height;
+        height: 15px;
+      }
+    }
+
+    @include when(active) {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include e(button) {
+    display: block;
+    opacity: 0.48;
+    width: 30px;
+    height: $--swiper-indicator-height;
+    background-color: $--color-white;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+.swiper-arrow-left-enter,
+.swiper-arrow-left-leave-active {
+  transform: translateY(-50%) translateX(-10px);
+  opacity: 0;
+}
+
+.swiper-arrow-right-enter,
+.swiper-arrow-right-leave-active {
+  transform: translateY(-50%) translateX(10px);
+  opacity: 0;
+}

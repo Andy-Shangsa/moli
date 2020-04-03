@@ -70,7 +70,7 @@ title: Input 输入框
     }
 </script>
 
-<block title="Input 输入框" desc="通过鼠标或键盘输入字符" :modules="modules">
+<block title="Input 输入框" desc="通过鼠标或键盘输入字符" :modules="modules" class="input-demo">
     <template slot="basic">
         <ml-input v-model="model" placeholder="请输入内容"></ml-input>
     </template>
@@ -93,11 +93,11 @@ title: Input 输入框
 </block>
 
 <style lang="scss">
-    .ml-input {
+    .input-demo .ml-input {
         width: 240px;
     }
 
-    .ml-textarea {
+    .input-demo .ml-textarea {
         width: 400px;
     }
 </style>

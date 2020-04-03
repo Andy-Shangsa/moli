@@ -1,4 +1,4 @@
-<script type="text/jsx">
+<script>
 import emitter from "../../../mixins/emitter";
 import Migrating from "../../../mixins/migrating";
 import Menubar from "../../../utils/menu/aria-menubar";
@@ -13,14 +13,14 @@ export default {
       {
         attrs: {
           role: "menubar",
-          key: +this.collapse,
-          class: {
-            "ml-menu--horizontal": this.mode === "horizontal",
-            "ml-menu--collapse": this.collapse,
-            "ml-menu": true
-          },
-          style: { backgroundColor: this.backgroundColor || "" }
-        }
+          key: +this.collapse
+        },
+        class: {
+          "ml-menu--horizontal": this.mode === "horizontal",
+          "ml-menu--collapse": this.collapse,
+          "ml-menu": true
+        },
+        style: { "background-color": this.backgroundColor || "" }
       },
       this.$slots.default
     );

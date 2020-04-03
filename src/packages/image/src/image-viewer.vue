@@ -1,3 +1,4 @@
+<!-- 待优化 -->
 <template>
   <transition name="viewer-fade">
     <div
@@ -144,6 +145,10 @@ export default {
       return this.index === this.urlList.length - 1;
     },
     currentImg() {
+      // console.log(this.urlList);
+      // console.log(this.index);
+      // console.log(this.initialIndex)
+      // console.log(this.urlList[this.index]);
       return this.urlList[this.index];
     },
     imgStyle() {

@@ -34,6 +34,7 @@ module.exports = {
                 "form/input",
                 "form/input-number",
                 "form/slider",
+                "form/rate",
                 "form/select",
                 "form/switch",
                 "form/form"
@@ -79,6 +80,7 @@ module.exports = {
                 "other/popover",
                 "other/popconfirm",
                 "other/image",
+                "other/swiper",
                 "other/timeline",
                 "other/collapse",
                 "other/backtop"

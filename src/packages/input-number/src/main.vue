@@ -204,8 +204,14 @@ export default {
       if (typeof newVal === "number" && this.precision !== undefined) {
         newVal = this.toPrecision(newVal, this.precision);
       }
-      if (newVal >= this.max) newVal = this.max;
-      if (newVal <= this.min) newVal = this.min;
+      if (newVal >= this.max) {
+        this.$emit("exceed-max", newVal);
+        newVal = this.max;
+      }
+      if (newVal <= this.min) {
+        this.$emit("less-min", newVal);
+        newVal = this.min;
+      }
       if (oldVal === newVal) return;
       this.userInput = null;
       this.$emit("input", newVal);
@@ -245,7 +251,9 @@ export default {
       {
         class: [
           "ml-input-number",
-          this.inputNumberSize ? "ml-input-number--" + this.inputNumberSize : "",
+          this.inputNumberSize
+            ? "ml-input-number--" + this.inputNumberSize
+            : "",
           { "is-disabled": this.inputNumberDisabled },
           { "is-without-controls": !this.controls },
           { "is-controls-right": this.controlsAtRight }
