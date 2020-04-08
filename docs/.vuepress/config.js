@@ -83,7 +83,8 @@ module.exports = {
                 "other/swiper",
                 "other/timeline",
                 "other/collapse",
-                "other/backtop"
+                "other/backtop",
+                "other/popup"
               ]
             }
           ]

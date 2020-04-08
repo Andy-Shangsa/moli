@@ -43,6 +43,7 @@
 @import "swiper";
 @import "swiper-item";
 @import "rate";
+@import "popup";
 @import "common/icon.scss";
 @import "common/transition.scss";
 
@@ -60,6 +61,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:focus {
+  outline: none;
+}
+
 .ml-icon-loading {
   animation: rotating 2s linear infinite;
 }
@@ -69,6 +74,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(300deg);
+    transform: rotate(360deg);
   }
 }

@@ -51,6 +51,7 @@ import Image from "./packages/image";
 import Swiper from "./packages/swiper";
 import SwiperItem from "./packages/swiper-item";
 import Rate from "./packages/rate";
+import Popup from "./packages/popup";
 
 const components = {
   Button,
@@ -101,7 +102,8 @@ const components = {
   Image,
   Swiper,
   SwiperItem,
-  Rate
+  Rate,
+  Popup
 };
 
 const install = function(Vue, opts = {}) {
