@@ -33,6 +33,8 @@ module.exports = {
                 "form/checkbox",
                 "form/input",
                 "form/input-number",
+                "form/time-picker",
+                "form/date-picker",
                 "form/slider",
                 "form/rate",
                 "form/select",

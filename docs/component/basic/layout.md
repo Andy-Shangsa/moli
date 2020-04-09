@@ -28,7 +28,6 @@ title: Layout 布局
   <ml-col :span="4"><div class="grid-content bg-purple"></div></ml-col>
   <ml-col :span="4"><div class="grid-content bg-purple-light"></div></ml-col>
 </ml-row>
-
 <style>
   .ml-row {
     margin-bottom: 20px;

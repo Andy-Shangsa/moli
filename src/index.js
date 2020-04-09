@@ -12,12 +12,14 @@ import Col from "./packages/col";
 import Collapse from "./packages/collapse";
 import CollapseItem from "./packages/collapse-item";
 import ColorPicker from "./packages/color-picker";
+import DatePicker from "./packages/date-picker";
 import Dialog from "./packages/dialog";
 import Dropdown from "./packages/dropdown";
 import DropdownItem from "./packages/dropdown-item";
 import DropdownMenu from "./packages/dropdown-menu";
 import Form from "./packages/form";
 import FormItem from "./packages/form-item";
+import Icon from "./packages/icon";
 import Image from "./packages/image";
 import Input from "./packages/input";
 import InputNumber from "./packages/input-number";
@@ -51,6 +53,8 @@ import Switch from "./packages/switch";
 import Table from "./packages/table";
 import TableColumn from "./packages/table-column";
 import Tag from "./packages/tag";
+import TimePicker from "./packages/time-picker";
+import TimeSelect from "./packages/time-select";
 import Timeline from "./packages/timeline";
 import TimelineItem from "./packages/timeline-item";
 import Tooltip from "./packages/tooltip";
@@ -68,12 +72,15 @@ const components = {
   Switch,
   Form,
   FormItem,
+  Icon,
   Input,
   InputNumber,
   Select,
   Option,
   OptionGroup,
   Tag,
+  TimePicker,
+  TimeSelect,
   Tooltip,
   Row,
   Col,
@@ -93,6 +100,7 @@ const components = {
   Collapse,
   CollapseItem,
   ColorPicker,
+  DatePicker,
   Menu,
   Submenu,
   MenuItem,

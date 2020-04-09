@@ -1,0 +1,210 @@
+@import "../mixins/mixins";
+@import "../common/var";
+@import "../common/transition";
+
+$--input-medium-font-size: 14px !default;
+/// height||Other|4
+$--input-medium-height: 36px !default;
+/// fontSize||Font|1
+$--input-small-font-size: 13px !default;
+/// height||Other|4
+$--input-small-height: 32px !default;
+/// fontSize||Font|1
+$--input-mini-font-size: 12px !default;
+/// height||Other|4
+$--input-mini-height: 28px !default;
+
+@include b(date-editor) {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+
+  &.ml-input,
+  &.ml-input__inner {
+    width: 220px;
+  }
+
+  @include m((monthrange)) {
+    &.ml-input,
+    &.ml-input__inner {
+      width: 300px;
+    }
+  }
+
+  @include m((daterange, timerange)) {
+    &.ml-input,
+    &.ml-input__inner {
+      width: 350px;
+    }
+  }
+
+  @include m(datetimerange) {
+    &.ml-input,
+    &.ml-input__inner {
+      width: 400px;
+    }
+  }
+
+  @include m(dates) {
+    .ml-input__inner {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .ml-icon-circle-close {
+    cursor: pointer;
+  }
+
+  .ml-range__icon {
+    font-size: 14px;
+    margin-left: -5px;
+    color: $--color-text-placeholder;
+    float: left;
+    line-height: 32px;
+  }
+
+  .ml-range-input {
+    appearance: none;
+    border: none;
+    outline: none;
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 39%;
+    text-align: center;
+    font-size: $--font-size-base;
+    color: $--color-text-regular;
+
+    &::placeholder {
+      color: $--color-text-placeholder;
+    }
+  }
+
+  .ml-range-separator {
+    display: inline-block;
+    height: 100%;
+    padding: 0 5px;
+    margin: 0;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    width: 5%;
+    color: $--color-text-primary;
+  }
+
+  .ml-range__close-icon {
+    font-size: 14px;
+    color: $--color-text-placeholder;
+    width: 25px;
+    display: inline-block;
+    float: right;
+    line-height: 32px;
+  }
+}
+
+@include b(range-editor) {
+  &.ml-input__inner {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+  }
+
+  .ml-range-input {
+    line-height: 1;
+  }
+
+  @include when(active) {
+    border-color: $--color-primary;
+
+    &:hover {
+      border-color: $--color-primary;
+    }
+  }
+
+  @include m(medium) {
+    &.ml-input__inner {
+      height: $--input-medium-height;
+    }
+
+    .ml-range-separator {
+      line-height: 28px;
+      font-size: $--input-medium-font-size;
+    }
+
+    .ml-range-input {
+      font-size: $--input-medium-font-size;
+    }
+
+    .ml-range__icon,
+    .ml-range__close-icon {
+      line-height: 28px;
+    }
+  }
+
+  @include m(small) {
+    &.ml-input__inner {
+      height: $--input-small-height;
+    }
+
+    .ml-range-separator {
+      line-height: 24px;
+      font-size: $--input-small-font-size;
+    }
+
+    .ml-range-input {
+      font-size: $--input-small-font-size;
+    }
+
+    .ml-range__icon,
+    .ml-range__close-icon {
+      line-height: 24px;
+    }
+  }
+
+  @include m(mini) {
+    &.ml-input__inner {
+      height: $--input-mini-height;
+    }
+
+    .ml-range-separator {
+      line-height: 20px;
+      font-size: $--input-mini-font-size;
+    }
+
+    .ml-range-input {
+      font-size: $--input-mini-font-size;
+    }
+
+    .ml-range__icon,
+    .ml-range__close-icon {
+      line-height: 20px;
+    }
+  }
+
+  @include when(disabled) {
+    background-color: $--disabled-fill-base;
+    border-color: $--disabled-border-base;
+    color: $--disabled-color-base;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      border-color: $--disabled-border-base;
+    }
+
+    input {
+      background-color: $--disabled-fill-base;
+      color: $--disabled-color-base;
+      cursor: not-allowed;
+      &::placeholder {
+        color: $--color-text-placeholder;
+      }
+    }
+
+    .ml-range-separator {
+      color: $--disabled-color-base;
+    }
+  }
+}

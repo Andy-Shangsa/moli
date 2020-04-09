@@ -1,5 +1,6 @@
 ---
 title: Button 按钮
+pageClass: demo-block
 ---
 
 <script>
