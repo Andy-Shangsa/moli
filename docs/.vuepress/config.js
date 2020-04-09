@@ -76,6 +76,7 @@ module.exports = {
               title: "其他组件",
               collapsable: false,
               children: [
+                "other/dialog",
                 "other/tooltip",
                 "other/popover",
                 "other/popconfirm",

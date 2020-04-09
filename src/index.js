@@ -1,57 +1,58 @@
+import Alert from "./packages/alert";
+import Backtop from "./packages/backtop";
+import Badge from "./packages/badge";
+import Breadcrumb from "./packages/breadcrumb";
+import BreadcrumbItem from "./packages/breadcrumb-item";
 import Button from "./packages/button";
 import ButtonGroup from "./packages/button-group";
-import Radio from "./packages/radio";
-import RadioGroup from "./packages/radio-group";
-import RadioButton from "./packages/radio-button";
 import Checkbox from "./packages/checkbox";
 import CheckboxButton from "./packages/checkbox-button";
 import CheckboxGroup from "./packages/checkbox-group";
-import Switch from "./packages/switch";
-import Form from "./packages/form";
-import FormItem from "./packages/form-item";
-import Input from "./packages/input";
-import InputNumber from "./packages/input-number";
-import Select from "./packages/select";
-import Option from "./packages/option";
-import OptionGroup from "./packages/option-group";
-import Tag from "./packages/tag";
-import Tooltip from "./packages/tooltip";
-import Message from "./packages/message";
-import MessageBox from "./packages/message-box";
-import Notify from "./packages/notify";
-import Alert from "./packages/alert";
-import Loading from "./packages/loading";
-import Row from "./packages/row";
 import Col from "./packages/col";
-import Table from "./packages/table";
-import TableColumn from "./packages/table-column";
-import Slider from "./packages/slider";
-import Badge from "./packages/badge";
-import Progress from "./packages/progress";
-import Pagination from "./packages/pagination";
-import Breadcrumb from "./packages/breadcrumb";
-import BreadcrumbItem from "./packages/breadcrumb-item";
-import Step from "./packages/step";
-import Steps from "./packages/steps";
-import Backtop from "./packages/backtop";
-import Timeline from "./packages/timeline";
-import TimelineItem from "./packages/timeline-item";
 import Collapse from "./packages/collapse";
 import CollapseItem from "./packages/collapse-item";
-import Menu from "./packages/menu/index.js";
-import Submenu from "./packages/submenu/index.js";
-import MenuItem from "./packages/menu-item/index.js";
-import MenuItemGroup from "./packages/menu-item-group/index.js";
+import Dialog from "./packages/dialog";
 import Dropdown from "./packages/dropdown";
 import DropdownItem from "./packages/dropdown-item";
 import DropdownMenu from "./packages/dropdown-menu";
-import Popover from "./packages/popover";
-import Popconfirm from "./packages/popconfirm";
+import Form from "./packages/form";
+import FormItem from "./packages/form-item";
 import Image from "./packages/image";
+import Input from "./packages/input";
+import InputNumber from "./packages/input-number";
+import Loading from "./packages/loading";
+import Menu from "./packages/menu";
+import MenuItem from "./packages/menu-item";
+import MenuItemGroup from "./packages/menu-item-group";
+import Message from "./packages/message";
+import MessageBox from "./packages/message-box";
+import Notify from "./packages/notify";
+import Option from "./packages/option";
+import OptionGroup from "./packages/option-group";
+import Pagination from "./packages/pagination";
+import Popconfirm from "./packages/popconfirm";
+import Popover from "./packages/popover";
+import Popup from "./packages/popup";
+import Progress from "./packages/progress";
+import Radio from "./packages/radio";
+import RadioGroup from "./packages/radio-group";
+import RadioButton from "./packages/radio-button";
+import Rate from "./packages/rate";
+import Row from "./packages/row";
+import Select from "./packages/select";
+import Slider from "./packages/slider";
+import Step from "./packages/step";
+import Steps from "./packages/steps";
+import Submenu from "./packages/submenu";
 import Swiper from "./packages/swiper";
 import SwiperItem from "./packages/swiper-item";
-import Rate from "./packages/rate";
-import Popup from "./packages/popup";
+import Switch from "./packages/switch";
+import Table from "./packages/table";
+import TableColumn from "./packages/table-column";
+import Tag from "./packages/tag";
+import Timeline from "./packages/timeline";
+import TimelineItem from "./packages/timeline-item";
+import Tooltip from "./packages/tooltip";
 
 const components = {
   Button,
@@ -103,7 +104,8 @@ const components = {
   Swiper,
   SwiperItem,
   Rate,
-  Popup
+  Popup,
+  Dialog
 };
 
 const install = function(Vue, opts = {}) {

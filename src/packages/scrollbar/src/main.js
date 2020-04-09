@@ -95,7 +95,8 @@ export default {
         h(Bar, {
           props: {
             size: this.sizeHeight,
-            move: this.moveY
+            move: this.moveY,
+            vertical: true
           }
         })
       ];
