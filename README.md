@@ -47,5 +47,3 @@ import "moli-element/lib/styles/index.css";
   ]
 }
 ```
-
-##### 接下来，如果你只希望引入部分组件

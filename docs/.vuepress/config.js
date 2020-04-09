@@ -37,6 +37,7 @@ module.exports = {
                 "form/rate",
                 "form/select",
                 "form/switch",
+                "form/color-picker",
                 "form/form"
               ]
             },

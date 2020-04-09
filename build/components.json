@@ -12,6 +12,7 @@
   "col": "packages/col/index.js",
   "collapse": "packages/collapse/index.js",
   "collapse-item": "packages/collapse-item/index.js",
+  "color-picker": "packages/color-picker/index.js",
   "dialog": "packages/dialog/index.js",
   "dropdown": "packages/dropdown/index.js",
   "dropdown-item": "packages/dropdown-item/index.js",

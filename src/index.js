@@ -11,6 +11,7 @@ import CheckboxGroup from "./packages/checkbox-group";
 import Col from "./packages/col";
 import Collapse from "./packages/collapse";
 import CollapseItem from "./packages/collapse-item";
+import ColorPicker from "./packages/color-picker";
 import Dialog from "./packages/dialog";
 import Dropdown from "./packages/dropdown";
 import DropdownItem from "./packages/dropdown-item";
@@ -55,6 +56,7 @@ import TimelineItem from "./packages/timeline-item";
 import Tooltip from "./packages/tooltip";
 
 const components = {
+  Alert,
   Button,
   ButtonGroup,
   Checkbox,
@@ -73,7 +75,6 @@ const components = {
   OptionGroup,
   Tag,
   Tooltip,
-  Alert,
   Row,
   Col,
   Table,
@@ -91,6 +92,7 @@ const components = {
   TimelineItem,
   Collapse,
   CollapseItem,
+  ColorPicker,
   Menu,
   Submenu,
   MenuItem,
