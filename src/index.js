@@ -64,6 +64,7 @@ import Tooltip from "./packages/tooltip";
 import Transfer from "./packages/transfer";
 import Tree from "./packages/tree";
 import Upload from "./packages/upload";
+import locale from "./locale";
 
 const components = {
   Alert,
@@ -130,6 +131,8 @@ const components = {
 };
 
 const install = function(Vue, opts = {}) {
+  locale.use(opts.locale);
+  locale.i18n(opts.i18n);
   Object.values(components).map(component => {
     Vue.component(component.name, component);
   });
@@ -152,6 +155,8 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 export default {
+  locale: locale.use,
+  i18n: locale.i18n,
   install,
   ...components
 };
