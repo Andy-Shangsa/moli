@@ -41,6 +41,8 @@ module.exports = {
                 "form/select",
                 "form/switch",
                 "form/color-picker",
+                "form/upload",
+                "form/transfer",
                 "form/form"
               ]
             },

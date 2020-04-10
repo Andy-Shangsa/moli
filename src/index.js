@@ -60,6 +60,8 @@ import TimeSelect from "./packages/time-select";
 import Timeline from "./packages/timeline";
 import TimelineItem from "./packages/timeline-item";
 import Tooltip from "./packages/tooltip";
+import Transfer from "./packages/transfer";
+import Upload from "./packages/upload";
 
 const components = {
   Alert,
@@ -119,7 +121,9 @@ const components = {
   SwiperItem,
   Rate,
   Popup,
-  Dialog
+  Dialog,
+  Transfer,
+  Upload
 };
 
 const install = function(Vue, opts = {}) {

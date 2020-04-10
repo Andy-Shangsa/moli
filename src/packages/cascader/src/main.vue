@@ -117,7 +117,7 @@
               <span>{{ item.text }}</span>
               <i
                 v-if="item.checked"
-                class="ml-icon-check"
+                class="ml-icon-right"
               ></i>
             </li>
           </template>

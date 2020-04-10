@@ -60,5 +60,7 @@
   "time-select": "packages/time-select/index.js",
   "timeline": "packages/timeline/index.js",
   "timeline-item": "packages/timeline-item/index.js",
-  "tooltip": "packages/tooltip/index.js"
+  "tooltip": "packages/tooltip/index.js",
+  "transfer": "packages/transfer/index.js",
+  "upload": "packages/upload/index.js"
 }
