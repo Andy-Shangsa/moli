@@ -5,6 +5,8 @@ import Breadcrumb from "./packages/breadcrumb";
 import BreadcrumbItem from "./packages/breadcrumb-item";
 import Button from "./packages/button";
 import ButtonGroup from "./packages/button-group";
+import Cascader from "./packages/cascader";
+import CascaderPanel from "./packages/cascader-panel";
 import Checkbox from "./packages/checkbox";
 import CheckboxButton from "./packages/checkbox-button";
 import CheckboxGroup from "./packages/checkbox-group";
@@ -63,6 +65,8 @@ const components = {
   Alert,
   Button,
   ButtonGroup,
+  Cascader,
+  CascaderPanel,
   Checkbox,
   CheckboxButton,
   CheckboxGroup,

@@ -32,6 +32,7 @@ module.exports = {
                 "form/radio",
                 "form/checkbox",
                 "form/input",
+                "form/cascader",
                 "form/input-number",
                 "form/time-picker",
                 "form/date-picker",

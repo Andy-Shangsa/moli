@@ -6,6 +6,8 @@
   "breadcrumb-item": "packages/breadcrumb-item/index.js",
   "button": "packages/button/index.js",
   "button-group": "packages/button-group/index.js",
+  "cascader": "packages/cascader/index.js",
+  "cascader-panel": "packages/cascader-panel/index.js",
   "checkbox": "packages/checkbox/index.js",
   "checkbox-button": "packages/checkbox-button/index.js",
   "checkbox-group": "packages/checkbox-group/index.js",
