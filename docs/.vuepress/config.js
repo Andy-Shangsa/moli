@@ -54,6 +54,7 @@ module.exports = {
                 "data/table",
                 "data/badge",
                 "data/progress",
+                "data/tree",
                 "data/pagination"
               ]
             },
@@ -91,7 +92,8 @@ module.exports = {
                 "other/timeline",
                 "other/collapse",
                 "other/backtop",
-                "other/popup"
+                "other/popup",
+                "other/infinite-scroll"
               ]
             }
           ]

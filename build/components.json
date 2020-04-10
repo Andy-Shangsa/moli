@@ -24,6 +24,7 @@
   "form-item": "packages/form-item/index.js",
   "icon": "packages/icon/index.js",
   "image": "packages/image/index.js",
+  "infinite-scroll": "packages/infinite-scroll/index.js",
   "input": "packages/input/index.js",
   "input-number": "packages/input-number/index.js",
   "loading": "packages/loading/index.js",
@@ -62,5 +63,6 @@
   "timeline-item": "packages/timeline-item/index.js",
   "tooltip": "packages/tooltip/index.js",
   "transfer": "packages/transfer/index.js",
+  "tree": "packages/tree/index.js",
   "upload": "packages/upload/index.js"
 }

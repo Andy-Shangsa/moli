@@ -23,6 +23,7 @@ import Form from "./packages/form";
 import FormItem from "./packages/form-item";
 import Icon from "./packages/icon";
 import Image from "./packages/image";
+import InfiniteScroll from "./packages/infinite-scroll";
 import Input from "./packages/input";
 import InputNumber from "./packages/input-number";
 import Loading from "./packages/loading";
@@ -61,6 +62,7 @@ import Timeline from "./packages/timeline";
 import TimelineItem from "./packages/timeline-item";
 import Tooltip from "./packages/tooltip";
 import Transfer from "./packages/transfer";
+import Tree from "./packages/tree";
 import Upload from "./packages/upload";
 
 const components = {
@@ -123,6 +125,7 @@ const components = {
   Popup,
   Dialog,
   Transfer,
+  Tree,
   Upload
 };
 
@@ -134,7 +137,7 @@ const install = function(Vue, opts = {}) {
     size: opts.size || "",
     zIndex: opts.zIndex || 2000
   };
-  Vue.use(Loading.directive);
+  Vue.use(Loading.directive).use(InfiniteScroll);
   Vue.prototype.$message = Message;
   Vue.prototype.$notify = Notify;
   Vue.prototype.$msgbox = MessageBox;
