@@ -130,7 +130,7 @@ export default {
             if (rootLazyRowKeys.indexOf(key) !== -1) {
               // 懒加载的 root 节点，更新一下原有的数据，原来的 children 一定是空数组
               if (newTreeData[key].children.length !== 0) {
-                throw new Error("[ElTable]children must be an empty array.");
+                throw new Error("[MlTable]children must be an empty array.");
               }
               newTreeData[key].children = lazyNodeChildren;
             } else {

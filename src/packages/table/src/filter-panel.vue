@@ -60,9 +60,9 @@ import { PopupManager } from "../../../utils/popup";
 import Locale from "../../../mixins/locale";
 import Clickoutside from "../../../utils/clickoutside";
 import Dropdown from "./dropdown";
-import ElCheckbox from "../../checkbox";
-import ElCheckboxGroup from "../../checkbox-group";
-import ElScrollbar from "../../scrollbar";
+import MlCheckbox from "../../checkbox";
+import MlCheckboxGroup from "../../checkbox-group";
+import MlScrollbar from "../../scrollbar";
 export default {
   name: "MlTableFilterPanel",
   mixins: [Popper, Locale],
@@ -70,9 +70,9 @@ export default {
     Clickoutside
   },
   components: {
-    ElCheckbox,
-    ElCheckboxGroup,
-    ElScrollbar
+    MlCheckbox,
+    MlCheckboxGroup,
+    MlScrollbar
   },
   props: {
     placement: {

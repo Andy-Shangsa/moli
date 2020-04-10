@@ -211,7 +211,7 @@ export default {
         !this.mouseInChild && this.rootMenu.closeMenu(this.index);
       }, this.hideTimeout);
       if (this.appendToBody && deepDispatch) {
-        if (this.$parent.$options.name === "ElSubmenu") {
+        if (this.$parent.$options.name === "MlSubmenu") {
           this.$parent.handleMouseleave(true);
         }
       }
@@ -334,6 +334,7 @@ export default {
       (rootMenu.mode === "vertical" && !rootMenu.collapse)
         ? "ml-icon-arrow-down"
         : "ml-icon-arrow-right";
+
     return h(
       "li",
       {

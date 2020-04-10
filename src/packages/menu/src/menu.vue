@@ -1,4 +1,4 @@
-<script>
+<script type="text/jsx">
 import emitter from "../../../mixins/emitter";
 import Migrating from "../../../mixins/migrating";
 import Menubar from "../../../utils/menu/aria-menubar";
@@ -11,16 +11,16 @@ export default {
     const component = h(
       "ul",
       {
-        attrs: {
-          role: "menubar",
-          key: +this.collapse
-        },
+        key: +this.collapse,
         class: {
           "ml-menu--horizontal": this.mode === "horizontal",
           "ml-menu--collapse": this.collapse,
           "ml-menu": true
         },
-        style: { "background-color": this.backgroundColor || "" }
+        style: { backgroundColor: this.backgroundColor || "" },
+        attrs: {
+          role: "menubar"
+        }
       },
       this.$slots.default
     );

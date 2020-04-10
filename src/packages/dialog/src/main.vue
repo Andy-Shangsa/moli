@@ -213,8 +213,8 @@ export default {
       }
     },
     updatePopper() {
-      this.broadcast("ElSelectDropdown", "updatePopper");
-      this.broadcast("ElDropdownMenu", "updatePopper");
+      this.broadcast("MlSelectDropdown", "updatePopper");
+      this.broadcast("MlDropdownMenu", "updatePopper");
     },
     afterEnter() {
       this.$emit("opened");

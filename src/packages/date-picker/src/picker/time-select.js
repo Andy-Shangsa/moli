@@ -6,7 +6,7 @@ export default {
 
   name: "MlTimeSelect",
 
-  componentName: "ElTimeSelect",
+  componentName: "MlTimeSelect",
 
   props: {
     type: {

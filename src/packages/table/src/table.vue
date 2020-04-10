@@ -250,7 +250,7 @@
 </template>
 
 <script type="text/babel">
-import ElCheckbox from "../../checkbox";
+import MlCheckbox from "../../checkbox";
 import { debounce, throttle } from "throttle-debounce";
 import {
   addResizeListener,
@@ -338,7 +338,7 @@ export default {
     TableHeader,
     TableFooter,
     TableBody,
-    ElCheckbox
+    MlCheckbox
   },
   methods: {
     getMigratingConfig() {

@@ -15,7 +15,7 @@
     @mouseleave="onMouseLeave"
   >
     <ml-tooltip
-      v-if="parentMenu.$options.componentName === 'ElMenu' && rootMenu.collapse && $slots.title"
+      v-if="parentMenu.$options.componentName === 'MlMenu' && rootMenu.collapse && $slots.title"
       effect="dark"
       placement="right"
     >
@@ -96,7 +96,7 @@ export default {
     },
     handleClick() {
       if (!this.disabled) {
-        this.dispatch("ElMenu", "item-click", this);
+        this.dispatch("MlMenu", "item-click", this);
         this.$emit("click", this);
       }
     }
