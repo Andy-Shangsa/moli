@@ -14,18 +14,20 @@
 
 ## 使用方式
 
-#### 全局
+#### 全局(main.js引入)
 
 ```js
+import Vue from ""vue;
 import moli from "moli-element";
 import "moli-element/lib/styles/index.css";
+Vue.use(moli)
 ```
 
 #### 按需引入
 
 ##### 借助 babel-plugin-component，我们可以只引入需要的组件，以达到减小项目体积的目的。
 
-##### 首先，安装 babel-plugin-component：
+##### 首先，安装 babel-plugin-component
 
 ```
   npm install babel-plugin-component -D
@@ -41,7 +43,10 @@ import "moli-element/lib/styles/index.css";
       "component",
       {
         "libraryName": "moli-element",
-        "styleLibraryName": "styles"
+        "styleLibrary": {
+          name: "styles",
+          base: false
+        }
       }
     ]
   ]

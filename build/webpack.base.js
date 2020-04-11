@@ -83,6 +83,14 @@ module.exports = {
           }
         ]
       },
+      // {
+      //   test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+      //   loader: "url-loader",
+      //   query: {
+      //     limit: 10000,
+      //     name: path.posix.join("fonts", "[name].[hash:7].[ext]")
+      //   }
+      // }
       {
         test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
         loader: "url-loader?limit=8192"
