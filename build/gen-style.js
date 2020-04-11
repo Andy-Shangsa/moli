@@ -1,31 +1,38 @@
-const gulp = require('gulp');
-const cleanCSS = require('gulp-clean-css');
-const sass = require('gulp-sass');
-const rename = require('gulp-rename');
-const autoprefixer = require('gulp-autoprefixer');
-const components = require('./components.json')
+const gulp = require("gulp");
+const cleanCSS = require("gulp-clean-css");
+const sass = require("gulp-sass");
+const rename = require("gulp-rename");
+const autoprefixer = require("gulp-autoprefixer");
+const components = require("./components.json");
+
+function buildIcon(cb) {
+  gulp.src("../src/styles/fonts/**").pipe(gulp.dest("../lib/styles/fonts"));
+  cb();
+}
 
 function buildCss(cb) {
-  gulp.src('../src/styles/index.scss')
+  gulp
+    .src("../src/styles/index.scss")
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(rename('index.css'))
-    .pipe(gulp.dest('../lib/styles'));
-  cb()
+    .pipe(rename("index.css"))
+    .pipe(gulp.dest("../lib/styles"));
+  cb();
 }
 
 function buildSeperateCss(cb) {
   Object.keys(components).forEach(compName => {
-    gulp.src(`../src/styles/${compName}.scss`)
+    gulp
+      .src(`../src/styles/${compName}.scss`)
       .pipe(sass())
       .pipe(autoprefixer())
       .pipe(cleanCSS())
       .pipe(rename(`${compName}.css`))
-      .pipe(gulp.dest('../lib/styles'));
-  })
+      .pipe(gulp.dest("../lib/styles"));
+  });
 
-  cb()
+  cb();
 }
 
-exports.default = gulp.series(buildCss, buildSeperateCss)
+exports.default = gulp.series(buildIcon, buildCss, buildSeperateCss);
