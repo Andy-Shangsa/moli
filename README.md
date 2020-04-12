@@ -44,8 +44,7 @@ Vue.use(moli)
       {
         "libraryName": "moli-element",
         "styleLibrary": {
-          name: "styles",
-          base: false
+          name: "styles"
         }
       }
     ]

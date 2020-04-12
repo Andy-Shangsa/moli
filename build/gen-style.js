@@ -21,6 +21,17 @@ function buildCss(cb) {
   cb();
 }
 
+function buildBaseCss(cb) {
+  gulp
+    .src("../src/styles/base.scss")
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(cleanCSS())
+    .pipe(rename("base.css"))
+    .pipe(gulp.dest("../lib/styles"));
+  cb();
+}
+
 function buildSeperateCss(cb) {
   Object.keys(components).forEach(compName => {
     gulp
@@ -35,4 +46,9 @@ function buildSeperateCss(cb) {
   cb();
 }
 
-exports.default = gulp.series(buildIcon, buildCss, buildSeperateCss);
+exports.default = gulp.series(
+  buildIcon,
+  buildCss,
+  buildBaseCss,
+  buildSeperateCss
+);
